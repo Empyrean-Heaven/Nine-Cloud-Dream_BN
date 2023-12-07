@@ -44,8 +44,7 @@
       {
         "text": "[1 thunderclap and flash] Let us officially declare independence.",
         "topic": "TALK_GU_ELDER_FACTION",
-        "condition": { "u_has_items": { "item": "thundersword", "count": 1 } },
-        "effect": { "u_consume_item": "thundersword", "count": 1 }
+        "condition": { "u_has_items": { "item": "thundersword", "count": 1 } }
       }
     ]
   },
@@ -135,7 +134,7 @@
       {
         "text": "Great! Thank you for your service.",
         "topic": "TALK_DONE",
-        "effect": [ { "u_buy_item": "thundersword", "count": 1 } ]
+        "effect": [ { "npc_change_faction": "gushin_clan" } ]
       }
     ]
   }
