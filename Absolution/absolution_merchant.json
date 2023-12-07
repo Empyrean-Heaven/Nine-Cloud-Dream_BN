@@ -1,0 +1,238 @@
+[
+  {
+    "type": "npc",
+    "id": "ab_merchant",
+    "name_suffix": "Absolution Deliverer",
+    "class": "NC_AB_SHOPKEEP",
+    "attitude": 0,
+    "mission": 3,
+    "chat": "TALK_ABMERC",
+    "mission_offered": "MISSION_GET_ABMERC_ITEM",
+    "faction": "absolution"
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_AB_SHOPKEEP",
+    "name": { "str": "Absolution Deliverer" },
+    "job_description": "A harbinger of gifts and boons to the earthen folk sent from up high. Is also a member of the Merchant's Guild (Not Represented In-Game).",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "common": false,
+    "bonus_int": { "one_in": 4 },
+    "bonus_per": { "one_in": 4 },
+    "worn_override": "NC_ABMERC_worn",
+    "weapon_override": "NC_AB_REP_weapon",
+    "shopkeeper_item_group": "NC_AB_SHOPKEEP_misc",
+    "carry_override": "NC_AB_SHOPKEEP_misc",
+    "skills": [
+      {
+        "skill": "ALL",
+        "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "constant": -2 }, { "one_in": 4 } ] } ] }
+      },
+      { "skill": "mechanics", "bonus": { "one_in": 2 } },
+      { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "barter", "bonus": { "rng": [ 3, 5 ] } }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_AB_SHOPKEEP_storage",
+    "subtype": "distribution",
+    "entries": [ { "item": "duffelbag", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_AB_SHOPKEEP_coat",
+    "subtype": "distribution",
+    "entries": [ { "item": "trenchcoat", "prob": 80 }, { "item": "vest", "prob": 60 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "absolvegroup",
+    "subtype": "distribution",
+    "ammo": 75,
+    "magazine": 100,
+    "entries": [
+      { "item": "absolve", "prob": 100 },
+      { "item": "absol", "prob": 100 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_AB_SHOPKEEP_misc",
+    "subtype": "collection",
+    "items": [
+      { "group": "big_canned_food", "count": [ 1, 2 ] },
+      { "group": "preserved_food", "count": [ 1, 3 ] },
+      { "group": "absolvegroup", "count": [ 8, 11 ] },
+      { "group": "snacks", "count": [ 1, 3 ] },
+      { "group": "cannedfood", "count": [ 1, 3 ] },
+      { "group": "ammo_pistol_common", "count": [ 1, 3 ] },
+      { "group": "ammo_rifle_common", "count": [ 1, 3 ] },
+      { "group": "guns_common", "count": [ 1, 3 ] },
+      { "group": "hospital_medical_items", "count": [ 2, 3 ] },
+      { "group": "fresh_produce", "count": [ 1, 3 ] }
+    ]
+  },
+  {
+    "id": "TALK_ABMERC",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Welcome, stranger, to one of Absolution's earthly abodes. It is paradise, is it not? Especially now that mortal civilization has ended? As it was foretold by Rakasha, one of the Eleven Gods? So, do you wish to seek the gifts the Eleven has granted us from afar?",
+      "no": "Welcome, stranger, to one of Absolution's earthly abodes. It is paradise, is it not? Especially now that mortal civilization has ended? As it was foretold by Rakasha, one of the Eleven Gods? So, do you wish to seek the gifts the Eleven has granted us from afar?"},
+    "responses": [
+      {
+        "text": "Hello, may I ask what exactly you do here? You don't seem like one of the normal townsfolk.",
+        "topic": "TALK_ABMERC_info"
+      },
+      {
+        "text": "Can I help you with anything? Does your town need an extra worker?",
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "Very well, let me peruse the gifts of the Eleven. What have you got for sale?",
+        "effect": "start_trade",
+        "topic": "TALK_ABMERC"
+      },
+      {
+        "text": "Goodbye, and thank you for your time.",
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "id": "TALK_ABMERC_info",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "That is because I am not, outlander. I am an agent of the Eleven. I was appointed the position of Deliverer of this town some time ago. No, I was not born here. Nor will I die here. Although Deliverer may sound grandiose, it is in truth, a minor appointment. I was not talented in the martial arts, thus my predicament as a bonafide shopkeep.",
+      "no": "That is because I am not, outlander. I am an agent of the Eleven. I was appointed the position of Deliverer of this town some time ago. No, I was not born here. Nor will I die here. Although Deliverer may sound grandiose, it is in truth, a minor appointment. I was not talented in the martial arts, thus my predicament as a bonafide shopkeep."},
+    "responses": [
+      {
+        "text": "I see. Thank you for your response.",
+        "topic": "TALK_ABMERC"
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABMERC_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "gloves_leather" },
+      { "item": "cassock" },
+      { "group": "NC_AB_SHOPKEEP_storage" },
+      { "group": "NC_AB_SHOPKEEP_coat" },
+      { "item": "dress_shoes" },
+      { "item": "tophat" }
+    ]
+  },
+  {
+    "id": "MISSION_GET_ABMERC_ITEM",
+    "type": "mission_definition",
+    "name": "Retrieve one copy of the King James Bible for the Absolution Deliverer",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 500,
+    "item": "holybook_bible1",
+    "count": 1,
+    "end": { "effect": [ { "u_buy_item": "absol", "count": 10 } ] },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_ABMERC_KILLCOUNT",
+    "dialogue": {
+      "describe": "The Bible is necessary to advance the Absolutist's studies. Get me a copy of it.",
+      "offer": "By the grace of the Eleven we have deciphered the myriad codes hidden within the mundane books of religion. However, as each Absolutist, the governor of an Absolution settlement, is expected to progress the knowledge Absolution has accumulated they are required to be under constant study and reflection. A few months ago, our copy of the King James Bible was destroyed in a fire. Find us a replacement. It'll be worthwhile.",
+      "accepted": "As it was foretold. Go forth, destined one, and submit to fate.",
+      "rejected": "This outcome was forseen by the Eleven. Remember, outlander, nothing escapes the scrying eyes of the Eleven.",
+      "advice": "It may be found in churches. Is it not obvious?",
+      "inquire": "Have you found the books yet, outlander?",
+      "success": "This was a natural outcome. We shall expect great things from you.",
+      "success_lie": "What an unusual course of events.",
+      "failure": "...This outcome we did not forsee."
+    }
+  },
+  {
+    "id": "MISSION_GET_ABMERC_KILLCOUNT",
+    "type": "mission_definition",
+    "name": { "str": "Slaughter the Innocent" },
+    "description": "Kill the band of ruffians terrorizing the neighboring areas.",
+    "goal": "MGOAL_KILL_MONSTER",
+    "difficulty": 4,
+    "value": 1000,
+    "start": {
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 1, "random": true, "search_range": 6, "z": 0 },
+      "update_mapgen": {
+        "place_monster": [
+          { "monster": "mon_feral_human_chainsaw", "x": 11, "y": 11, "target": true },
+          { "monster": "mon_feral_jackboot", "x": 14, "y": 8 },
+          { "monster": "mon_feral_maid_broom", "x": 5, "y": 4 }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "absol", "count": 20 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_ABMERC_WIPEOUT",
+    "dialogue": {
+      "describe": "Good work on the last quest. The Absolutist is pleased with your dedication. However, Absolution requires far greater loyalty from its members. Although you are not a part of us, outlander, it wouldn't hurt to give your best.",
+      "offer": "Good work on the last quest. The Absolutist is pleased with your dedication. However, Absolution requires far greater loyalty from its members. Although you are not a part of us, outlander, it wouldn't hurt to give your best. Now, I need to test your resolve. Destitute ruffians have been pillaging the nearby regions for some time now. I need you to handle them.",
+      "accepted": "Good, good. Never question the intent of the Eleven.",
+      "rejected": "The Eleven have only so much leniency, outlander. Do not play needless mind games.",
+      "advice": "Expect some resistance, and be prepared to get your hands dirty.",
+      "inquire": "Did you taste the blood of your enemies, outlander?",
+      "success": "Fabulous. I hope it wasn't your virgin kill. Endless possibilities await if you relax your morals.",
+      "success_lie": "I doubt every fabric of existence, outlander. What's another?",
+      "failure": "...We'll be watching you, scum."
+    }
+  },
+  {
+    "id": "MISSION_GET_ABMERC_WIPEOUT",
+    "type": "mission_definition",
+    "name": { "str": "Operation Wipeout" },
+    "description": "Let this be your masterpiece thesis, cruel angel.",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 5,
+    "value": 1500,
+    "start": {
+      "assign_mission_target": { "om_terrain": "bandit_cabin", "om_special": "bandit_cabin", "reveal_radius": 1, "search_range": 40 },
+      "update_mapgen": {
+        "set": [
+          { "point": "trap", "id": "tr_landmine_buried", "x": 7, "y": 6 },
+          { "point": "trap", "id": "tr_landmine_buried", "x": 5, "y": 5 },
+          { "point": "trap", "id": "tr_landmine_buried", "x": 8, "y": 5 },
+          { "point": "trap", "id": "tr_landmine_buried", "x": 0, "y": 11 }
+        ],
+        "place_npcs": [ { "class": "bandit", "x": 12, "y": 12, "target": true } ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "judgmentspear", "count": 1 },
+        { "u_buy_item": "judgmentwing", "count": 1 },
+        { "u_buy_item": "absolve", "count": 22 },
+        { "u_buy_item": "absol", "count": 100 },
+        { "u_buy_item": "book_ab_history1", "count": 1 },
+        { "u_buy_item": "book_ab_history2", "count": 1 },
+        { "u_buy_item": "book_ab_history3", "count": 1 },
+        { "u_buy_item": "book_ab_history4", "count": 1 },
+        { "u_buy_item": "book_ab_history5", "count": 1 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "dialogue": {
+      "describe": "It is time for you to face the greatest threat to humanity. Humanity itself. A bandit hideout has recently sprung up nearby. They shall not be allowed to sully the sacred temple of Absolution. Eradicate the plague that is plundering the lives of the innocent.",
+      "offer": "It is time for you to face the greatest threat to humanity. Humanity itself. A bandit hideout has recently sprung up nearby. They shall not be allowed to sully the sacred temple of Absolution. Eradicate the plague that is plundering the lives of the innocent. The cruel devils have surfaced as the reckoning commenced. You know what must be done, noble one. Bring peace to the land. This is but one of many heathens you shall strike down on your warpath to glory. Let this be the start of a divine mission.",
+      "accepted": "Stand proud, grand lord. You are doing a great service to Absolution. After this, you shall be elevated in spirit and stature.",
+      "rejected": "Truly? Are you certain? At the very cusp of heaven?",
+      "advice": "Let the dead rest. May the living be free.",
+      "inquire": "What of the blasphemous sinners, honorable one?",
+      "success": "Henceforth, you shall be a friend to us here in this community. As every Absolution settlement operates independantly, this hospitality may only cover this specific town. I heard some good news from the Absolutist as well. You will now be awarded our classic spear of judgment, the one that I and the Representatives are wielding. It holds immeasurable power. May it serve you well. You will additionally be granted a textbook that teaches you how to use this weapon properly. Also, you may want to check up on the Absolutist as well.",
+      "success_lie": "What is this? Another one of your tricks?",
+      "failure": "...What a disgrace. As the Eleven cannot be wrong, it must be you who is deplorable."
+    }
+  }
+]
