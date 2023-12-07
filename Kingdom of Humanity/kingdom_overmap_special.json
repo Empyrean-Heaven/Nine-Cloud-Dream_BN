@@ -1,0 +1,21 @@
+[
+  {
+    "type": "overmap_special",
+    "id": "rural province",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "ki_province_1" },
+      { "point": [ 1, 0, 0 ], "overmap": "ki_province_2" },
+      { "point": [ 0, 1, 0 ], "overmap": "ki_province_3" },
+      { "point": [ 1, 1, 0 ], "overmap": "ki_province_4" },
+      { "point": [ 0, 0, 1 ], "overmap": "ki_province_1_roof" },
+      { "point": [ 1, 0, 1 ], "overmap": "ki_province_2_roof" },
+      { "point": [ 0, 1, 1 ], "overmap": "ki_province_3_roof" },
+      { "point": [ 1, 1, 1 ], "overmap": "ki_province_4_roof" }
+    ],
+    "locations": [ "land" ],
+    "city_distance": [ 15, 30 ],
+    "occurrences": [ 0, 1 ],
+    "flags": [ "ELECTRIC_GRID" ],
+    "rotate": false
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "type": "npc",
+    "id": "ki_citizen",
+    "name_suffix": "Citizen",
+    "class": "NC_KI_CITIZEN",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_KICITIZEN",
+    "faction": "humankingdom"
+  },
+  {
+    "type": "item_group",
+    "id": "NC_KICITIZEN_worn",
+    "subtype": "collection",
+    "entries": [ { "item": "jeans", "prob": 70 }, { "item": "pants", "prob": 20 }, { "item": "pants_cargo", "prob": 20 }, { "item": "tshirt", "prob": 60 }, { "item": "polo_shirt", "prob": 20 }, { "item": "tank_top", "prob": 20 }, { "item": "hoodie", "prob": 20 },
+      { "item": "jacket_light", "prob": 20 },
+      { "item": "jacket_windbreaker", "prob": 10 },
+      { "item": "jacket_leather", "prob": 20 },
+      { "item": "trenchcoat", "prob": 20 },
+      { "item": "jacket_jean", "prob": 60 }, { "item": "boots", "prob": 100 }, { "item": "gloves_work", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_KICITIZEN_carry",
+    "subtype": "collection",
+    "entries": [ { "item": "pocketwatch", "prob": 40 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_KICITIZEN_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "shovel", "prob": 75 }, { "item": "hoe", "prob": 50 } ]
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_KI_CITIZEN",
+    "name": { "str": "Citizen" },
+    "job_description": "A citizen of the Kingdom of Humanity. Originally a survivor.",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "bonus_str": { "rng": [ 0, 1 ] },
+    "common": false,
+    "worn_override": "NC_KICITIZEN_worn",
+    "carry_override": "NC_KICITIZEN_carry",
+    "weapon_override": "NC_KICITIZEN_weapon",
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ 0, -4 ] } ] } ] } },
+      { "skill": "survival", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "rifle", "bonus": { "rng": [ 0, 2 ] } }
+    ]
+  },
+  {
+    "id": "TALK_KICITIZEN",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_is_wearing": "legion_of_honor",
+      "yes": "Ah, Your Excellency! Welcome, welcome! It is an honor for you to grace us with your presence! I hope fair winds help your sails in these harsh times. Please, feel free to stay in our province as long as Your Excellency desires.",
+      "no": "Oh, hello! How are you? We don't often get visitors in these parts. When the world ended we had to flee the cities and seek shelter... Hmm? Why yes, we weren't originally a part of the Kingdom. I was just an ordinary civilian living life before the end of the world, but luckily the Prince accepted survivors with hospitality and I settled down here. Truly, the Kingdom is a testament to the indomitable human spirit! All are welcome in the arms of the King and his Princes."
+    },
+    "responses": [
+      {
+        "text": "How's life out here? Doing alright?",
+        "topic": "TALK_KICITIZEN_INFO"
+      },
+      { "text": "Farewell, and stay safe.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "TALK_KICITIZEN_INFO",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_is_wearing": "legion_of_honor",
+      "yes": "Of course, Your Excellency! We had even heard of your exploits! A remarkable feat of valor and grit! With the banner of the King flying high, what are we to be afraid of? We shall adapt to the new world order as we always had. And we are mighty thankful you are a part of this journey as well, Your Excellency.",
+      "no": "We are a small community, not a lot of mouths to feed, and we all put in our fair share of work. In fact, the Prince is the most enthusiastic worker, putting nearly ten hours a day toiling in the fields, gathering berries, chopping firewood... It is a blessing to humanity that such a place exists out here amidst the desolate wastes."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  }
+]

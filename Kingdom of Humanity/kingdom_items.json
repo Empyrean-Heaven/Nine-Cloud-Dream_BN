@@ -1,0 +1,29 @@
+[
+  {
+    "id": "legion_of_honor",
+    "copy-from": "badge_abstract",
+    "looks_like": "badge_detective",
+    "type": "ARMOR",
+    "name": { "str": "légion d'honneur" },
+    "description": "A shining medallion made of solid gold that is a symbol of trust between its bearer and the Kingdom of Humanity. On the front are the words 'Voix du Ciel, Gorge du Monde' while at the back is the admonition 'Loathe Divinity' written by the King himself.",
+    "material": [ "gold" ],
+    "price_postapoc": 100,
+    "proportional": { "weight": 2 }
+  },
+  {
+    "type": "GENERIC",
+    "id": "humancradle",
+    "name": { "str": "cradle of humanity" },
+    "description": "A miniscule nugget of gold with a sketch of the face of three people juxtaposed within each other. One represents the visage of a baby, another an adult, and one an elder.",
+    "price": "2 USD",
+    "price_postapoc": "2 USD",
+    "stackable": true,
+    "weight": "2 g",
+    "to_hit": -1,
+    "color": "white",
+    "looks_like": "RobofacCoin",
+    "symbol": "$",
+    "material": [ "gold" ],
+    "volume": "1 ml"
+  }
+]

@@ -1,0 +1,262 @@
+[
+  {
+    "type": "npc",
+    "id": "ki_prince",
+    "name_suffix": "Prince",
+    "class": "NC_KI_PRINCE",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_KIPRINCE",
+    "mission_offered": "MISSION_GET_KIPRINCE_ITEM",
+    "faction": "humankingdom"
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_KI_PRINCE",
+    "name": { "str": "Prince" },
+    "job_description": "A member of the original party that formed the Kingdom. The Kingdom has since long abandoned martial arts (the founding members of the Kingdom weren't talented to begin with besides the late progenitor) and has gravitated towards guns.",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "common": false,
+    "worn_override": "REFUGEE_John_worn",
+    "carry_override": "REFUGEE_John_carried",
+    "weapon_override": "REFUGEE_John_wield",
+    "bonus_str": { "rng": [ 0, 1 ] },
+    "bonus_int": { "rng": [ -2, 0 ] },
+    "bonus_per": { "rng": [ 0, 2 ] },
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ 0, -4 ] } ] } ] } },
+      { "skill": "gun", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "pistol", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "rifle", "bonus": { "rng": [ 0, 2 ] } }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_is_wearing": "legion_of_honor",
+      "yes": "Salutations, Chancellor! Always a pleasure to meet you! How are your affairs? Doing spectacularly I hope! It would be a grand favor to all of us if you make yourself at home.",
+      "no": "Good to see another survivor out in this landscape. Come, make yourself comfortable. Welcome to our little hovel. It would be a delight for you to stay here. We could always use an extra hand. I suppose introductions are in order. Presently, I act as the leader and governor of this place. You may have noticed people referring to me as 'Prince' but don't be intimidated! It was a title granted by the King of our dominion. I happened to be one of the founding members of the Kingdom and was thus granted this prestige as a result. Officially, I am the Novum Princeps of this land. My territories stretch five miles from each cardinal direction of our physical borders. Quite the estate!"},
+    "responses": [
+      {
+        "text": "Good to see you too, Prince! May I ask for more details concerning this Kingdom of yours?",
+        "topic": "TALK_KIPRINCE_info"
+      },
+      {
+        "text": "I am always ready to be of service! How may I help?",
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "Goodbye, and thank you for your time.",
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[1 légion d'honneur] Let us announce to the entirety of the Kingdom my appointment as Chancellor.",
+        "topic": "TALK_KIPRINCE_FACTION",
+        "condition": { "u_is_wearing": "legion_of_honor" }
+      }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE_info",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_is_wearing": "legion_of_honor",
+      "yes": "Of course, Your Excellency! The Kingdom was founded by the remnants of various factions in the so-called Martial World. The traditions of the Martial World flow back to ancient China, and while I am not privy on the details, I can attest that hardly any changes occured in the Martial World throughout all this time. At least, until the end of the civilized world was brought forth recently. The dream of our King, as you may be well aware, is a revival of the dead human social structure. I address it as 'dead' due to the fact the King will only rest content when the inhumane have all been eradicated from the face of our planet. The motto of our Kingdom is, after all, 'No angels or demon, only man.'",
+      "no": "The Kingdom was founded by the remnants of various factions in the so-called Martial World. The traditions of the Martial World flow back to ancient China, and while I am not privy on the details, I can attest that hardly any changes occured in the Martial World throughout all this time. At least, until the end of the civilized world was brought forth recently. The dream of our King is a revival of the dead human social structure. I address it as 'dead' due to the fact the King will only rest content when the inhumane have all been eradicated from the face of our planet. The motto of our Kingdom is, after all, 'No angels or demon, only man.'"},
+    "responses": [
+      {
+        "text": "I see. Thank you for your response.",
+        "topic": "TALK_KIPRINCE"
+      }
+    ]
+  },
+  {
+    "id": "MISSION_GET_KIPRINCE_ITEM",
+    "type": "mission_definition",
+    "name": "Retrieve one copy of Visions in Solitude for the Prince",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 500,
+    "item": "visions_solitude",
+    "count": 1,
+    "end": { "effect": [ { "u_buy_item": "humancradle", "count": 10 } ] },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_KIPRINCE_KILLCOUNT",
+    "dialogue": {
+      "describe": "I have been plagued by nightmares ever since the world broke down. I may be at the end of the rope.",
+      "offer": "I have been plagued by nightmares ever since the world broke down. I may be at the end of the rope. I read a book when I was younger, Visions in Solitude, and I believe it may soothe me like it did back then. Could you perchance bring me a copy of it for me? I would be most grateful.",
+      "accepted": "Thank you. Running this province has been wearing down my nerves.",
+      "rejected": "...I suppose I should pop a pill or two to calm my nerves.",
+      "advice": "It is an uncommon book. Perhaps a large library may be in possession of it?",
+      "inquire": "How goes the search? Did you find the book?",
+      "success": "Oh, thank you, truly. I shall straddle this as I fall asleep each night. I can feel myself calming down already.",
+      "success_lie": "I sincerely doubt your claims.",
+      "failure": "For reasons I cannot explain, I felt as if the whole world shook."
+    }
+  },
+  {
+    "id": "MISSION_GET_KIPRINCE_KILLCOUNT",
+    "type": "mission_definition",
+    "name": { "str": "Eliminate the Pillagers" },
+    "description": "A once promising aristocrat has gone rogue. Now, he terrorizes the nearby lands with his posse. Free him from his misery.",
+    "goal": "MGOAL_KILL_MONSTER",
+    "difficulty": 4,
+    "value": 1000,
+    "start": {
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 1, "random": true, "search_range": 6, "z": 0 },
+      "update_mapgen": {
+        "place_monster": [
+          { "monster": "mon_feral_human_chainsaw", "x": 11, "y": 11, "target": true },
+          { "monster": "mon_feral_jackboot", "x": 14, "y": 8 },
+          { "monster": "mon_feral_maid_broom", "x": 6, "y": 5 }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "humancradle", "count": 20 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_KIPRINCE_NOBILITY",
+    "dialogue": {
+      "describe": "There was a noble I was close with. His name was Jean-Paul. He was a dashing and promising youth. With the recent turn of events however, he has lost his mind.",
+      "offer": "There was a noble I was close with. His name was Jean-Paul Pierre Balthazar. He was a dashing and promising youth. With the recent turn of events however, he has lost his mind. He now roams the neighboring premises and drives fear into the hearts of our citizens. Could you perhaps end his suffering and torment? For all of us?",
+      "accepted": "Thank you. It means a lot to us, and especially me. How cruel fate was...",
+      "rejected": "I understand. Although his flesh moves, I pray he, the real him, has reached a better place.",
+      "advice": "I know not what his form is like now. I would assume the worst. Be prepared.",
+      "inquire": "Are... Are they saved? Have you released them from mortality?",
+      "success": "Thank goodness. I, I thank you kindly.",
+      "success_lie": "Do not do this.",
+      "failure": "...I realize I may have asked for too much."
+    }
+  },
+  {
+    "id": "MISSION_GET_KIPRINCE_NOBILITY",
+    "type": "mission_definition",
+    "name": { "str": "Proving One's Worth" },
+    "description": "Enact the will of the King and gain a chance to become Chancellor.",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 5,
+    "value": 1500,
+    "start": {
+      "assign_mission_target": { "om_terrain": "ab_camp1", "om_special": "absolution camp", "reveal_radius": 1, "search_range": 40 },
+      "update_mapgen": {
+        "place_npcs": [ { "class": "absolution_rep", "x": 12, "y": 12, "target": true } ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "legion_of_honor", "count": 1 },
+        { "u_buy_item": "humancradle", "count": 100 },
+        { "u_buy_item": "book_kingdomcome1", "count": 1 },
+        { "u_buy_item": "book_kingdomcome2", "count": 1 },
+        { "u_buy_item": "book_kingdomcome3", "count": 1 },
+        { "u_buy_item": "book_kingdomcome4", "count": 1 },
+        { "u_buy_item": "book_kingdomcome5", "count": 1 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "dialogue": {
+      "describe": "I contacted the King of your arrival and achievements. He was most impressed. His Majesty has been looking for a lord who would scour the wasteland, marking the prowess of the Kingdom and its people down into the very earth. He sought to find a person of commitment and action. Someone who would venture out of closed doors, someone who would search the desolate lands for survivors and hope. And I told him I found our hero. It has been decided that if you complete one final mission, you will be granted the honorable title of Chancellor.",
+      "offer": "I contacted the King of your arrival and achievements. He was most impressed. His Majesty has been looking for a lord who would scour the wasteland, marking the prowess of the Kingdom and its people down into the very earth. He sought to find a person of commitment and action. Someone who would venture out of closed doors, someone who would search the desolate lands for survivors and hope. And I told him I found our hero. It has been decided that if you complete one final mission, you will be granted the honorable title of Chancellor. Your task entails the destruction of an enemy encampment. Yes, indeed, the Kingdom is at war. Across several fronts too. Thankfully, victory is close. Be warned, the settlement you are to besiege belongs to Absolution, a most heinous and crooked alliance of filthy outcasts of a faraway realm. Although low-born, they possess exceptional fighting capabilities. Stay on guard every moment you are in enemy territory. I would keep my distance.",
+      "accepted": "Your actions have brought much peace to us. Remember, we are grateful for everything you have done for us. We hope we will be of use to you one day as well.",
+      "rejected": "I understand. Not everybody wants to leap into a war they know nothing about.",
+      "advice": "No matter how many enemies the Kingdom is up against, we will always stand proud.",
+      "inquire": "Have you brought forth victory to us?",
+      "success": "Excellent! Wonderful! Thank you, dear beloved! Oh, the Kingdom is eternally grateful to you! We were stagnant in this region, blockaded on all fronts by enemies, but you managed to take down one of the worst offenders! I, as Prince, humbly offer my gratitude in place of the King. I, as Prince, hereby declare you to be the new Chancellor of our magnificent Kingdom. The King shall be most pleased to hear the news. Please, receive this medallion from us, Your Excellency. It will signify your status across all of the Kingdom's provinces, and you will be lauded as a personage worthy of our respect whenever you tread.",
+      "success_lie": "I do not believe this to be best for our destiny.",
+      "failure": "Perhaps another time. In the meanwhile, make yourself at home."
+    }
+  },
+  {
+    "id": "TALK_KIPRINCE_FACTION",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Naturally, Your Excellency! Please, allow me to follow through with the procedures.",
+      "no": "Naturally, Your Excellency! Please, allow me to follow through with the procedures."},
+    "responses": [
+      {
+        "text": "Let us proceed.",
+        "topic": "TALK_KIPRINCE_FACTION1",
+        "effect": [ { "npc_change_faction": "humankingdom" } ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE_FACTION1",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have improved your relationship with the Kingdom of Humanity by 30 points.",
+      "no": "I have improved your relationship with the Kingdom of Humanity by 30 points."},
+    "responses": [
+      {
+        "text": "Let us continue.",
+        "effect": [ { "u_faction_rep": 30 }, { "npc_change_faction": "absolution" } ],
+        "topic": "TALK_KIPRINCE_FACTION2"
+      }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE_FACTION2",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with Absolution by 30 points.",
+      "no": "I have decreased your relationship with Absolution by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "gushin_clan" } ],
+        "topic": "TALK_KIPRINCE_FACTION3"
+      }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE_FACTION3",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Gushin Clan by 30 points.",
+      "no": "I have decreased your relationship with the Gushin Clan by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "demon_cult" } ],
+        "topic": "TALK_KIPRINCE_FACTION4"
+      }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE_FACTION4",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Demon Cult by 30 points.",
+      "no": "I have decreased your relationship with the Demon Cult by 30 points."},
+    "responses": [
+      {
+        "text": "Are we finished?",
+        "effect": [ { "u_faction_rep": -30 } ],
+        "topic": "TALK_KIPRINCE_FACTION5"
+      }
+    ]
+  },
+  {
+    "id": "TALK_KIPRINCE_FACTION5",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Quite so, Your Excellency. May your prestige reach all the four corners of the world!",
+      "no": "Quite so, Your Excellency. May your prestige reach all the four corners of the world!"},
+    "responses": [
+      {
+        "text": "As do yours, Your Highness.",
+        "topic": "TALK_DONE"
+      }
+    ]
+  }
+]
