@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "nineclouddream",
+    "name": "<color_white>Nine Cloud Dream</color>",
+    "authors": [ "Hyojason" ],
+    "description": "A world of immortal cultivation and the pursuit of truth has arrived due to the advent of the Cataclysm. In this frozen tundra of perfection stagnant and destiny pilfered, can anyone achieve the legendary dream of transcendence?",
+    "version": "Version 1.0",
+    "category": "content",
+    "dependencies": [ "bn" ]
+  }
+]

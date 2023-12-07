@@ -1,0 +1,154 @@
+[
+  {
+    "type": "faction",
+    "id": "absolution",
+    "name": "Absolution",
+    "likes_u": 0,
+    "respects_u": 0,
+    "known_by_u": false,
+    "size": 11,
+    "power": 110,
+    "food_supply": 110000,
+    "wealth": 11000000,
+    "currency": "absol",
+    "relations": {
+      "absolution": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "gushin_clan": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "your_followers": {
+        "kill on sight": false,
+        "watch your back": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "knows your voice": true
+      },
+      "demon_cult": { "kill on sight": true, "knows your voice": true },
+      "humankingdom": { "kill on sight": true, "knows your voice": true }
+    },
+    "epilogues": [
+      { "power_min": 0, "id": "epilogue_faction_absolution" }
+    ],
+    "description": "An aloof and ethereal body comprised of mysterious individuals. It is rumored their numbers are less than twenty yet they each hold unimaginable power. According to hearsay, they are synonymous with 'heaven'."
+  },
+  {
+    "type": "faction",
+    "id": "gushin_clan",
+    "name": "Gushin Clan",
+    "likes_u": 0,
+    "respects_u": 0,
+    "known_by_u": false,
+    "size": 60,
+    "power": 80,
+    "food_supply": 180000,
+    "wealth": 18000000,
+    "currency": "wonshin",
+    "relations": {
+      "absolution": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "gushin_clan": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "your_followers": {
+        "kill on sight": false,
+        "watch your back": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "knows your voice": true
+      },
+      "demon_cult": { "kill on sight": true, "knows your voice": true },
+      "humankingdom": { "kill on sight": true, "knows your voice": true }
+    },
+    "epilogues": [
+      { "power_min": 0, "id": "epilogue_faction_gushin" }
+    ],
+    "description": "A clan that is the progenitor of myriad enterprises. Untold legacies and glorious treasures stemmed from the Gushin Clan since the memory of man. They serve only one lord, the illusory group known as Absolution. The Gushin Clan has House of Divinity, Golden Mountain, and Purple Pagoda under its belt as its protégés. Unfotunately, the Cataclysm wiped out most of the protégés, leading to the remaining few survivors to be scattered all across the land without central command. It is even thought that the last remnants of the Three Underdogs desire vengeance upon the clan for withholding support during the chaos."
+  },
+  {
+    "type": "faction",
+    "id": "demon_cult",
+    "name": "Demon Cult",
+    "likes_u": 0,
+    "respects_u": 0,
+    "known_by_u": false,
+    "size": 20,
+    "power": 60,
+    "food_supply": 60000,
+    "wealth": 6000000,
+    "currency": "skyseal",
+    "relations": {
+      "your_followers": {
+        "kill on sight": false,
+        "watch your back": false,
+        "share my stuff": false,
+        "guard your stuff": false,
+        "lets you in": false,
+        "defends your space": false,
+        "knows your voice": false
+      },
+      "absolution": { "kill on sight": true, "knows your voice": true },
+      "gushin_clan": { "kill on sight": true, "knows your voice": true },
+      "humankingdom": { "kill on sight": true, "knows your voice": true }
+    },
+    "epilogues": [
+      { "power_min": 0, "id": "epilogue_faction_cult" }
+    ],
+    "description": "A cult which was once a part of a larger collective known as the Sundered Sky School. It broke away from its parent organization when their schools of thought diverged. The founder of the cult was the Grand Elder of the School at the time and ended up being granted the posthumous title of Original Sin by the later descendants of the cult. As it stands, the cult is centered on a single figure who is elected yearly by a council presided over by the spirit of prior Demons. If a suitable candidate for the mantle of the Demon is discovered, the council and figurehead is dissolved and all the operations of the cult are handed over to the Demon."
+  },
+  {
+    "type": "faction",
+    "id": "humankingdom",
+    "name": "Kingdom of Humanity",
+    "likes_u": 0,
+    "respects_u": 0,
+    "known_by_u": false,
+    "size": 30,
+    "power": 30,
+    "food_supply": 80000,
+    "wealth": 500000,
+    "currency": "humancradle",
+    "relations": {
+      "absolution": { "kill on sight": true, "knows your voice": true },
+      "gushin_clan": { "kill on sight": true, "knows your voice": true },
+      "your_followers": {
+        "kill on sight": false,
+        "watch your back": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "knows your voice": true
+      },
+      "demon_cult": { "kill on sight": true, "knows your voice": true }
+    },
+    "epilogues": [
+      { "power_min": 0, "id": "epilogue_faction_kingdom" }
+    ],
+    "description": "The Kingdom of Humanity traces its origins to a few years before the Cataclysm. The founders of the Kingdom were originally members of various organizations, including but not limited to, House of Divinity, Golden Mountain, and Purple Pagoda. At first they were largely treated as outcasts, hardly worth anyone's time, but when the end times came they managed to persevere and survive the onslaught of the terrors that now roam the Earth. Presently, they serve as a symbol of civilization and is regarded as a bastion of the human ideal."
+  }
+]
