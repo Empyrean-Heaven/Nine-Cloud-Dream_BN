@@ -1,0 +1,49 @@
+[
+  {
+    "id": "thundersword",
+    "type": "TOOL",
+    "category": "weapons",
+    "weapon_category": [ "1H_SWORDS", "JAPANESE_SWORDS" ],
+    "name": { "str": "thunderclap and flash" },
+    "description": "A sword vaguely resembling a katana that seems to be wreathed in mist and thunder. Sparks dance across the blade as it pulsates great power.",
+    "looks_like": "katana",
+    "weight": "1776 g",
+    "volume": "2000 ml",
+    "price": 16000,
+    "price_postapoc": 950,
+    "to_hit": 2,
+    "bashing": 14,
+    "cutting": 35,
+    "material": [ "steel" ],
+    "symbol": "/",
+    "color": "light_gray",
+    "use_action": [ { "type": "ADRENALINE_INJECTOR" } ],
+    "artifact_data": {
+      "effects_wielded": [ "AEP_SPEED_UP", "AEP_RESIST_ELECTRICITY", "AEP_GLOW", "AEP_SMOKE", "AEP_MOVEMENT_NOISE", "AEP_BAD_WEATHER" ]
+    },
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "STRENGTH", "add": 2 },
+            { "value": "SPEED", "add": 80 },
+            { "value": "ATTACK_COST", "add": 20 },
+            { "value": "DEXTERITY", "add": 3 },
+            { "value": "ARMOR_ELEC", "add": 20 },
+            { "value": "INTELLIGENCE", "add": 2 }
+          ],
+          "hit_you_effect": [ { "id": "AEA_STORM", "hit_self": true }, { "id": "AEA_FLASH", "hit_self": true } ],
+          "hit_me_effect": [ { "id": "AEA_TELEPORT", "hit_self": false }, { "id": "AEA_FLASH", "hit_self": false } ],
+          "intermittent_activation": {
+            "effects": [ { "frequency": "15 minutes", "spell_effects": [ { "id": "AEA_STAMINA_EMPTY" }, { "id": "AEA_PARALYZE" } ] } ]
+          }
+        }
+      ]
+    },
+    "techniques": [ "WBLOCK_1", "WIDE", "BRUTAL", "SWEEP", "SPIN", "RAPID", "PRECISE", "tec_break" ],
+    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
+    "flags": [ "UNBREAKABLE_MELEE", "SHEATH_SWORD", "REACH_ATTACK", "STAB", "MAGIC_FOCUS" ]
+  }
+]

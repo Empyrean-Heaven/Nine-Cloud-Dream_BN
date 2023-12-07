@@ -1,0 +1,18 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "wonshin",
+    "name": { "str": "wonshin" },
+    "description": "A small, lumpy piece of solid gold. Across its uneven surface, an alternating pattern is etched in fine detail. If held close to the eyes, it seems to spell out 'G'.",
+    "price": "80 USD",
+    "price_postapoc": "8 USD",
+    "stackable": true,
+    "weight": "8 g",
+    "to_hit": -1,
+    "color": "white",
+    "looks_like": "RobofacCoin",
+    "symbol": "$",
+    "material": [ "gold" ],
+    "volume": "1 ml"
+  }
+]

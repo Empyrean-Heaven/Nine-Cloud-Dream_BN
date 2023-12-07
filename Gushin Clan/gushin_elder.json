@@ -1,0 +1,142 @@
+[
+  {
+    "type": "npc_class",
+    "id": "NC_GU_ELDER",
+    "name": { "str": "Gushin Elder" },
+    "job_description": "A governor and caretaker of a Gushin town.",
+    "common": false,
+    "bonus_str": { "rng": [ 3, 6 ] },
+    "bonus_dex": { "rng": [ 3, 4 ] },
+    "bonus_int": { "rng": [ 3, 4 ] },
+    "bonus_per": { "rng": [ 3, 4 ] },
+    "worn_override": "NC_GUSHIN_ELITE_worn",
+    "carry_override": "NC_GUSHIN_ELITE_carried",
+    "weapon_override": "NC_GUSHIN_ELITE_weapon",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" }, [ "GUSPEED", 100 ] ],
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 2 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ -2, -4 ] } ] } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 4, 8 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "throw", "bonus": { "rng": [ 3, 6 ] } }
+    ]
+  },
+  {
+    "type": "npc",
+    "id": "gu_elder",
+    "name_suffix": "Gushin Elder",
+    "class": "NC_GU_ELDER",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_GU_ELDER",
+    "faction": "gushin_clan"
+  },
+  {
+    "id": "TALK_GU_ELDER",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Welcome. I see you are not one of my kin. Still, feel free to stay for a while.",
+      "no": "Welcome. I see you are not one of my kin. Still, feel free to stay for a while."
+    },
+    "responses": [
+      { "text": "Thank you for your time.", "topic": "TALK_DONE" },
+      {
+        "text": "[1 thunderclap and flash] Let us officially declare independence.",
+        "topic": "TALK_GU_ELDER_FACTION",
+        "condition": { "u_has_items": { "item": "thundersword", "count": 1 } },
+        "effect": { "u_consume_item": "thundersword", "count": 1 }
+      }
+    ]
+  },
+  {
+    "id": "TALK_GU_ELDER_FACTION",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Certainly, comrade. Please, allow me to go through the process.",
+      "no": "Certainly, comrade. Please, allow me to go through the process."},
+    "responses": [
+      {
+        "text": "Let us proceed.",
+        "topic": "TALK_GU_ELDER_FACTION1",
+        "effect": [ { "npc_change_faction": "gushin_clan" } ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_GU_ELDER_FACTION1",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have improved your relationship with the Gushin Clan by 30 points.",
+      "no": "I have improved your relationship with the Gushin Clan by 30 points."},
+    "responses": [
+      {
+        "text": "Let us continue.",
+        "effect": [ { "u_faction_rep": 30 }, { "npc_change_faction": "absolution" } ],
+        "topic": "TALK_GU_ELDER_FACTION2"
+      }
+    ]
+  },
+  {
+    "id": "TALK_GU_ELDER_FACTION2",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with Absolution by 30 points.",
+      "no": "I have decreased your relationship with Absolution by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "demon_cult" } ],
+        "topic": "TALK_GU_ELDER_FACTION3"
+      }
+    ]
+  },
+  {
+    "id": "TALK_GU_ELDER_FACTION3",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Demon Cult by 30 points.",
+      "no": "I have decreased your relationship with the Demon Cult by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "humankingdom" } ],
+        "topic": "TALK_GU_ELDER_FACTION4"
+      }
+    ]
+  },
+  {
+    "id": "TALK_GU_ELDER_FACTION4",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Kingdom of Humanity by 30 points.",
+      "no": "I have decreased your relationship with the Kingdom of Humanity by 30 points."},
+    "responses": [
+      {
+        "text": "Are we finished?",
+        "effect": [ { "u_faction_rep": -30 } ],
+        "topic": "TALK_GU_ELDER_FACTION5"
+      }
+    ]
+  },
+  {
+    "id": "TALK_GU_ELDER_FACTION5",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Absolutely. Thank you for your patience.",
+      "no": "Absolutely. Thank you for your patience."},
+    "responses": [
+      {
+        "text": "Great! Thank you for your service.",
+        "topic": "TALK_DONE",
+        "effect": [ { "u_buy_item": "thundersword", "count": 1 } ]
+      }
+    ]
+  }
+]

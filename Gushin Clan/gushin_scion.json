@@ -1,0 +1,152 @@
+[
+  {
+    "type": "npc",
+    "id": "gu_woman",
+    "name_suffix": "Female Scion",
+    "class": "gu_womnpc",
+    "gender": "female",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_GUWOMAN",
+    "faction": "gushin_clan"
+  },
+  {
+    "type": "npc",
+    "id": "gu_man",
+    "name_suffix": "Male Scion",
+    "class": "gu_manpc",
+    "gender": "male",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_GUMAN",
+    "faction": "gushin_clan"
+  },
+  {
+    "type": "npc_class",
+    "id": "gu_womnpc",
+    "name": { "str": "Female Scion" },
+    "job_description": "A Gushin descendant who happens to be inept in the martial arts. Thus, they are relegated to caring for the town they live in.",
+    "traits": [ { "group": "Appearance_demographics" } ],
+    "common": false,
+    "worn_override": "NC_GUWOM_worn",
+    "carry_override": "NC_GUWOM_carry",
+    "weapon_override": "NC_GUWOM_weapon",
+    "skills": [
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -3 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 1, 2 ] } }
+    ]
+  },
+  {
+    "type": "npc_class",
+    "id": "gu_manpc",
+    "name": { "str": "Male Scion" },
+    "job_description": "A Gushin descendant who happens to be inept in the martial arts. Thus, they are relegated to caring for the town they live in.",
+    "traits": [ { "group": "Appearance_demographics" } ],
+    "common": false,
+    "worn_override": "NC_GUMAN_worn",
+    "carry_override": "NC_GUMAN_carry",
+    "weapon_override": "NC_GUMAN_weapon",
+    "skills": [
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -3 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 1, 2 ] } }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUWOM_worn",
+    "subtype": "collection",
+    "entries": [ { "item": "maid_dress" }, { "item": "bra" }, { "item": "panties" }, { "item": "dress_shoes" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUWOM_carry",
+    "subtype": "collection",
+    "entries": [ { "item": "pocketwatch", "prob": 40 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUWOM_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUMAN_weapon",
+    "subtype": "distribution",
+    "items": [ [ "null", 50 ], [ "knife_folding", 30 ], [ "knife_hunting", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUMAN_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "gloves_leather", "prob": 80 },
+      { "item": "boxer_shorts" },
+      { "item": "breeches" },
+      { "item": "dress_shirt" },
+      { "item": "dress_shoes" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUMAN_carry",
+    "subtype": "collection",
+    "entries": [ { "item": "pocketwatch", "prob": 40 } ]
+  },
+  {
+    "id": "TALK_GUMAN",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Welcome to our humble village, ma'am. We are all good townsfolk, not much trouble. But I hear the outside world has run into some problems. Some of our blood, the Gushin, in charge of external affairs have gone dark. Why yes, our town is operated from the funds earned by the outer Gushin descendants which is delivered to each Gushin town for upkeep and progress. Nowadays, as the cashflow has been cut short, we've been slowly rationing out our resources. Tough times, tough times.",
+      "no": "Welcome to our humble village, sir. We are all good townsfolk, not much trouble. But I hear the outside world has run into some problems. Some of our blood, the Gushin, in charge of external affairs have gone dark. Why yes, our town is operated from the funds earned by the outer Gushin descendants which is delivered to each Gushin town for upkeep and progress. Nowadays, as the cashflow has been cut short, we've been slowly rationing out our resources. Tough times, tough times."
+    },
+    "responses": [
+      {
+        "text": "May I ask who exactly are the Gushin? The people here appear affluent and finely raised.",
+        "topic": "TALK_GUMAN_INFO"
+      },
+      { "text": "Farewell, and stay safe.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "TALK_GUMAN_INFO",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Why thank you! Yes, the Gushin are a magnificent lineage of noble descent. Although we ourselves in this town were separated from the main Gushin family line, oh, around three-hundred years ago, we still reap the benefits of being a Gushin, albeit sparsely. But it is enough to get by comfortably. Every few years, a person from the main Gushin household visits to keep us in line. The allocation of funds is a matter of grave importance for our survival, so we always look our best. The Gushin Clan itself is lorded by another group called Absolution, but we commoners aren't knowledgable about them. I suppose some of the upper echelon of our town may have more details.",
+      "no": "Why thank you! Yes, the Gushin are a magnificent lineage of noble descent. Although we ourselves in this town were separated from the main Gushin family line, oh, around three-hundred years ago, we still reap the benefits of being a Gushin, albeit sparsely. But it is enough to get by comfortably. Every few years, a person from the main Gushin household visits to keep us in line. The allocation of funds is a matter of grave importance for our survival, so we always look our best. The Gushin Clan itself is lorded by another group called Absolution, but we commoners aren't knowledgable about them. I suppose some of the upper echelon of our town may have more details."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "id": "TALK_GUWOMAN",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Good to see you miss! What do you think of our lovely town? It is so beautiful, is it not? How goes the news in the outside world? I heard things have gotten rather bad out there. A few men of letters recently visited, but according to them, the cities had grown rife with strife! I do help things turn out better. It is peaceful here.",
+      "no": "Good to see you sir! What do you think of our lovely town? It is so beautiful, is it not? How goes the news in the outside world? I heard things have gotten rather bad out there. A few men of letters recently visited, but according to them, the cities had grown rife with strife! I do help things turn out better. It is peaceful here."
+    },
+    "responses": [
+      {
+        "text": "May I ask who exactly are the Gushin? The people here appear affluent and finely raised.",
+        "topic": "TALK_GUWOMAN_INFO"
+      },
+      { "text": "Farewell, and stay safe.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "TALK_GUWOMAN_INFO",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Oh ho, deary, thank you for your compliments. As for the Gushin, we are a family. Not quite one family, but family nonetheless. Most matters end up being family matters due to the sheer size of our coverage. My own husband is very distantly related to me! No need to fear, it is truly distant. I must say, I never thought much about the Gushin. I can hardly tell you why we are even called Gushin! I suppose we are family, and that is all that there is.",
+      "no": "Oh ho, deary, thank you for your compliments. As for the Gushin, we are a family. Not quite one family, but family nonetheless. Most matters end up being family matters due to the sheer size of our coverage. My own husband is very distantly related to me! No need to fear, it is truly distant. I must say, I never thought much about the Gushin. I can hardly tell you why we are even called Gushin! I suppose we are family, and that is all that there is."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  }
+]

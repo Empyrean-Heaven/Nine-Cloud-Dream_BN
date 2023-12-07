@@ -1,0 +1,236 @@
+[
+  {
+    "type": "npc",
+    "id": "gu_merchant",
+    "name_suffix": "Gushin Giver",
+    "class": "NC_GU_SHOPKEEP",
+    "attitude": 0,
+    "mission": 3,
+    "chat": "TALK_GUMERC",
+    "mission_offered": "MISSION_GET_GUMERC_ITEM",
+    "faction": "gushin_clan"
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_GU_SHOPKEEP",
+    "name": { "str": "Gushin Giver" },
+    "job_description": "A scion of Gushin in charge of wares. Is also a member of the Merchant's Guild (Not Represented In-Game).",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "common": false,
+    "bonus_int": { "one_in": 4 },
+    "bonus_per": { "one_in": 4 },
+    "worn_override": "NC_GUMERC_worn",
+    "weapon_override": "NC_GUSHIN_ELITE_weapon",
+    "shopkeeper_item_group": "NC_GU_SHOPKEEP_misc",
+    "carry_override": "NC_GU_SHOPKEEP_misc",
+    "skills": [
+      {
+        "skill": "ALL",
+        "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "constant": -2 }, { "one_in": 4 } ] } ] }
+      },
+      { "skill": "mechanics", "bonus": { "one_in": 2 } },
+      { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "barter", "bonus": { "rng": [ 3, 5 ] } }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GU_SHOPKEEP_storage",
+    "subtype": "distribution",
+    "entries": [ { "item": "duffelbag", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GU_SHOPKEEP_coat",
+    "subtype": "distribution",
+    "entries": [ { "item": "trenchcoat", "prob": 80 }, { "item": "vest", "prob": 60 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "gushingroup",
+    "subtype": "distribution",
+    "ammo": 75,
+    "magazine": 100,
+    "entries": [
+      { "item": "wonshin", "prob": 100 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GU_SHOPKEEP_misc",
+    "subtype": "collection",
+    "items": [
+      { "group": "big_canned_food", "count": [ 1, 2 ] },
+      { "group": "preserved_food", "count": [ 1, 3 ] },
+      { "group": "gushingroup", "count": [ 8, 11 ] },
+      { "group": "snacks", "count": [ 1, 3 ] },
+      { "group": "cannedfood", "count": [ 1, 3 ] },
+      { "group": "ammo_pistol_common", "count": [ 1, 3 ] },
+      { "group": "ammo_rifle_common", "count": [ 1, 3 ] },
+      { "group": "guns_common", "count": [ 1, 3 ] },
+      { "group": "hospital_medical_items", "count": [ 2, 3 ] },
+      { "group": "fresh_produce", "count": [ 1, 3 ] }
+    ]
+  },
+  {
+    "id": "TALK_GUMERC",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Greetings, how do you do? I see you are not one of us. Don't take it harshly, it is just that everyone else here is related by blood. We are one lineage, one dynasty.",
+      "no": "Greetings, how do you do? I see you are not one of us. Don't take it harshly, it is just that everyone else here is related by blood. We are one lineage, one dynasty."},
+    "responses": [
+      {
+        "text": "Hello to you too. May I ask the history of your town? Everyone here is a... Gushin?",
+        "topic": "TALK_GUMERC_info"
+      },
+      {
+        "text": "Can I help you with anything? Does your town need an extra worker?",
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "Very well, let me peruse the gifts of the Eleven. What have you got for sale?",
+        "effect": "start_trade",
+        "topic": "TALK_GUMERC"
+      },
+      {
+        "text": "Goodbye, and thank you for your time.",
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "id": "TALK_GUMERC_info",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Assuredly. Every resident here is a part of the Gushin bloodline. And don't you worry, we are not obssessed over the purity of our bloodline or our family bond or anything like that. Mainly because the Gushin Clan was originally more than forty different clans! In the past, they all decided to merge with one another, leading to the present day Gushin Clan.",
+      "no": "Assuredly. Every resident here is a part of the Gushin bloodline. And don't you worry, we are not obssessed over the purity of our bloodline or our family bond or anything like that. Mainly because the Gushin Clan was originally more than forty different clans! In the past, they all decided to merge with one another, leading to the present day Gushin Clan."},
+    "responses": [
+      {
+        "text": "I see. Thank you for your response.",
+        "topic": "TALK_GUMERC"
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_GUMERC_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "gloves_leather" },
+      { "item": "kariginu" },
+      { "group": "NC_GU_SHOPKEEP_storage" },
+      { "group": "NC_GU_SHOPKEEP_coat" },
+      { "item": "dress_shoes" },
+      { "item": "eboshi" }
+    ]
+  },
+  {
+    "id": "MISSION_GET_GUMERC_ITEM",
+    "type": "mission_definition",
+    "name": "Retrieve one copy of the The Sutras of the Buddha for the Gushin Giver",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 500,
+    "item": "holybook_sutras",
+    "count": 1,
+    "end": { "effect": [ { "u_buy_item": "wonshin", "count": 10 } ] },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_GUMERC_KILLCOUNT",
+    "dialogue": {
+      "describe": "The Sutras are imperative to the tranquility of the Gushin hegemony. Get me a copy of it.",
+      "offer": "The sacred texts of the enlightened one had helped us hold on in these rough times. Recently, however, it vanished into thin air one morning. The town has slowly grown unsettled by its absence and we desperately need a replacement. Please, find one for us. You will be repaid handsomely.",
+      "accepted": "Thank you, kind stranger. It means a lot to us in these trying times.",
+      "rejected": "That's a shame. If you change your mind, please let me know.",
+      "advice": "I would search in libraries and bookstores. It isn't awfully uncommon.",
+      "inquire": "Do you have the scriptures, friend?",
+      "success": "Thank you, considerate one. We are most grateful.",
+      "success_lie": "It had to be done, hadn't it?",
+      "failure": "What a shame, what a shame..."
+    }
+  },
+  {
+    "id": "MISSION_GET_GUMERC_KILLCOUNT",
+    "type": "mission_definition",
+    "name": { "str": "Save the Damned" },
+    "description": "Release the sinners terrorizing the neighboring areas from this earthly coil.",
+    "goal": "MGOAL_KILL_MONSTER",
+    "difficulty": 4,
+    "value": 1000,
+    "start": {
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 1, "random": true, "search_range": 6, "z": 0 },
+      "update_mapgen": {
+        "place_monster": [
+          { "monster": "mon_feral_human_chainsaw", "x": 11, "y": 11, "target": true },
+          { "monster": "mon_feral_jackboot", "x": 14, "y": 8 },
+          { "monster": "mon_feral_maid_broom", "x": 5, "y": 4 }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "wonshin", "count": 20 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_GUMERC_REVOLUTION",
+    "dialogue": {
+      "describe": "We find your abilities noteworthy and would like to give you another quest. It is concerning a few poor, poor souls lost in this forsaken land.",
+      "offer": "We find your abilities noteworthy and would like to give you another quest. It is concerning a few poor, poor souls lost in this forsaken land. By the mercy of the saint and sinner, we have located a small group of folks that require salvation. Please, guide them into the place with no tears. We will be most grateful.",
+      "accepted": "Amitaba. I aspire to reach your level of benevolence, almsgiver.",
+      "rejected": "I pray the light of grace reaches them eventually. As to you, friend from afar.",
+      "advice": "They may not realize they require salvation. Do not hesitate, for the holy man knows.",
+      "inquire": "Have the lost and damned ascended into paradise?",
+      "success": "Wonderful. Blessed are you, enacter of the will of the world.",
+      "success_lie": "Do not be tempted by external forces, sire.",
+      "failure": "How could you have possibly failed?"
+    }
+  },
+  {
+    "id": "MISSION_GET_GUMERC_REVOLUTION",
+    "type": "mission_definition",
+    "name": { "str": "Viva La Revolución" },
+    "description": "Everything has led up to this moment. Are you with us or against us?",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 5,
+    "value": 1500,
+    "start": {
+      "assign_mission_target": { "om_terrain": "bandit_cabin", "om_special": "bandit_cabin", "reveal_radius": 1, "search_range": 40 },
+      "update_mapgen": {
+        "set": [
+          { "point": "trap", "id": "tr_landmine_buried", "x": 7, "y": 6 },
+          { "point": "trap", "id": "tr_landmine_buried", "x": 5, "y": 5 },
+          { "point": "trap", "id": "tr_landmine_buried", "x": 8, "y": 5 },
+          { "point": "trap", "id": "tr_landmine_buried", "x": 0, "y": 11 }
+        ],
+        "place_npcs": [ { "class": "absolution_rep", "x": 12, "y": 12, "target": true } ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "thundersword", "count": 1 },
+        { "u_buy_item": "kariginu", "count": 1 },
+        { "u_buy_item": "wonshin", "count": 100 },
+        { "u_buy_item": "book_gu_lineage1", "count": 1 },
+        { "u_buy_item": "book_gu_lineage2", "count": 1 },
+        { "u_buy_item": "book_gu_lineage3", "count": 1 },
+        { "u_buy_item": "book_gu_lineage4", "count": 1 },
+        { "u_buy_item": "book_gu_lineage5", "count": 1 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "dialogue": {
+      "describe": "It is time for us to come clean. Please, friend, listen to our plight.",
+      "offer": "It is time for us to come clean. Please, friend, listen to our plight. The Gushin Clan has been serving a group known as Absolution since time immemorial. We toiled as their lapdogs for all of civilization. Through conquests, wars, rebellions, schizms, you name it. This was due to their overwhelming might. With the unfolding of recent events however, our higher-ups have learned that Absolution has stretched their forces too thin. They are losing ground as we speak. It is time for Gushin to take off the shackles binding them to Absolution! We must stand proud as one family, one household! Are you with us or against us?",
+      "accepted": "Excellent, I knew you were one of us. The plan is simple. For months we requested backup, bemoaning the strength of a nearby bandit outpost. The truth is, they are pitifully weak. They are merely to be a distraction. Now, at long last, Absolution has sent one of its representatives to handle this situation. That is where you come in. Head over to the bandit camp and take down the representative. I doubt the bandits will be of much trouble to the representative, so strike after he has depleted at least a nominal amount of power battling them. This is our only chance. Be prepared. If you return with success, please visit our Elder as well after telling me the good news. He will be most grateful.",
+      "rejected": "...This doesn't bode well for you. Please, reconsider. Please.",
+      "advice": "I heard the legion of Absolution can ravage entire cities in mere moments. Luckily, only one representative was dispatched to settle our issue. Still, stay on guard. Keep your distance. The lowest representatives are mightier than even our Elders. Your only saving grace is that they won't be hostile at first since they are in the dark to our plans.",
+      "inquire": "Was it a success? Are we free?",
+      "success": "Oh, I knew you could do it! I just knew it! This is wondrous news my friend! Although it will take some time for the whole of Gushin to find out, this is still a start! You see, each bundle of Gushin territories is presided over by a local Absolution representative. And we just killed the one overseeing this place! The main Absolution bigwigs won't know of our brave renegade act until at least months later! By then, we would have outclassed their already struggling selves! Haha! Revolution! Say it with me! Revolution!",
+      "success_lie": "Do not be like this.",
+      "failure": "...How could this be? No!"
+    }
+  }
+]

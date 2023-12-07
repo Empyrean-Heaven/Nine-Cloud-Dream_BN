@@ -1,0 +1,83 @@
+[
+  {
+    "type": "npc_class",
+    "id": "NC_GUSHIN_ELITE",
+    "name": { "str": "Gushin Elite" },
+    "job_description": "An upper class issue of the Gushin Clan.",
+    "common": false,
+    "bonus_str": { "rng": [ 3, 4 ] },
+    "bonus_dex": { "rng": [ 2, 3 ] },
+    "bonus_int": { "rng": [ 2, 3 ] },
+    "bonus_per": { "rng": [ 2, 3 ] },
+    "worn_override": "NC_GUSHIN_ELITE_worn",
+    "carry_override": "NC_GUSHIN_ELITE_carried",
+    "weapon_override": "NC_GUSHIN_ELITE_weapon",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" }, [ "GUSPEED", 100 ] ],
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 2 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ -2, -4 ] } ] } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "throw", "bonus": { "rng": [ 2, 4 ] } }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "GUSPEED",
+    "name": { "str": "Guspeed" },
+    "points": 6,
+    "description": "Swift Steed.",
+    "starting_trait": false,
+    "valid": false,
+    "speed_modifier": 4.4
+  },
+  {
+    "id": "NC_GUSHIN_ELITE_worn",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "item": "bikini_bottom" },
+      { "item": "bikini_top" },
+      { "item": "stockings" },
+      { "item": "thigh_high_boots" },
+      { "item": "kariginu" },
+      { "item": "backpack" },
+      { "item": "bead_necklace" }
+    ]
+  },
+  {
+    "id": "NC_GUSHIN_ELITE_weapon",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "item": "thundersword" } ]
+  },
+  {
+    "id": "NC_GUSHIN_ELITE_carried",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "wonshin", "count": [ 10, 100 ] },
+      { "item": "holybook_sutras" }
+    ]
+  },
+  {
+    "type": "npc",
+    "id": "gu_elite",
+    "name_suffix": "Gushin Elite",
+    "class": "NC_GUSHIN_ELITE",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_GUELITE",
+    "faction": "gushin_clan"
+  },
+  {
+    "id": "TALK_GUELITE",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "A new face among the crowd, I see. As long as you obey our code of conduct no harm will come to you.",
+      "no": "A new face among the crowd, I see. As long as you obey our code of conduct no harm will come to you."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  }
+]

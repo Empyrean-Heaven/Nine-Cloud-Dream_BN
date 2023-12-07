@@ -1,0 +1,106 @@
+[
+  {
+    "id": "GU_TOWN1_1",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_1",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_roof_1",
+    "type": "overmap_terrain",
+    "name": "gushin town roof",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 2
+  },
+  {
+    "id": "GU_TOWN1_2",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_2",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_roof_2",
+    "type": "overmap_terrain",
+    "name": "gushin town roof",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 2
+  },
+  {
+    "id": "GU_TOWN1_3",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_3",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_roof_3",
+    "type": "overmap_terrain",
+    "name": "gushin town roof",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 2
+  },
+  {
+    "id": "GU_TOWN1_4",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_4",
+    "type": "overmap_terrain",
+    "name": "gushin town",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 10,
+    "mondensity": 2
+  },
+  {
+    "id": "GU_TOWN2_roof_4",
+    "type": "overmap_terrain",
+    "name": "gushin town roof",
+    "sym": "g",
+    "color": "light_green",
+    "see_cost": 2
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "guelite_spawn",
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "gu_elite", "x": 0, "y": 0 } ] }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "guwom_spawn",
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "gu_woman", "x": 0, "y": 0 } ] }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "guman_spawn",
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "gu_man", "x": 0, "y": 0 } ] }
+  }
+]
