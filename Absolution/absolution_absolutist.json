@@ -59,8 +59,7 @@
       {
         "text": "[1 spear of judgment] Can we make my status in Absolution official?",
         "topic": "TALK_AB_ABSOLUTIST_FACTION",
-        "condition": { "u_has_items": { "item": "judgmentspear", "count": 1 } },
-        "effect": { "u_consume_item": "judgmentspear", "count": 1 }
+        "condition": { "u_has_items": { "item": "judgmentspear", "count": 1 } }
       }
     ]
   },
@@ -135,7 +134,7 @@
       {
         "text": "Great! Thank you for your service.",
         "topic": "TALK_DONE",
-        "effect": [ { "u_buy_item": "judgmentspear", "count": 1 } ]
+        "effect": [ { "npc_change_faction": "absolution" } ]
       }
     ]
   },
