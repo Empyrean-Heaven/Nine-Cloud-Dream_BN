@@ -30,13 +30,6 @@
         "defends your space": true,
         "knows your voice": true
       },
-      "your_followers": {
-        "kill on sight": false,
-        "watch your back": true,
-        "guard your stuff": true,
-        "lets you in": true,
-        "knows your voice": true
-      },
       "demon_cult": { "kill on sight": true, "knows your voice": true },
       "humankingdom": { "kill on sight": true, "knows your voice": true }
     },
@@ -76,13 +69,6 @@
         "defends your space": true,
         "knows your voice": true
       },
-      "your_followers": {
-        "kill on sight": false,
-        "watch your back": true,
-        "guard your stuff": true,
-        "lets you in": true,
-        "knows your voice": true
-      },
       "demon_cult": { "kill on sight": true, "knows your voice": true },
       "humankingdom": { "kill on sight": true, "knows your voice": true }
     },
@@ -104,15 +90,6 @@
     "wealth": 6000000,
     "currency": "skyseal",
     "relations": {
-      "your_followers": {
-        "kill on sight": false,
-        "watch your back": false,
-        "share my stuff": false,
-        "guard your stuff": false,
-        "lets you in": false,
-        "defends your space": false,
-        "knows your voice": false
-      },
       "absolution": { "kill on sight": true, "knows your voice": true },
       "gushin_clan": { "kill on sight": true, "knows your voice": true },
       "humankingdom": { "kill on sight": true, "knows your voice": true }
@@ -137,13 +114,6 @@
     "relations": {
       "absolution": { "kill on sight": true, "knows your voice": true },
       "gushin_clan": { "kill on sight": true, "knows your voice": true },
-      "your_followers": {
-        "kill on sight": false,
-        "watch your back": true,
-        "guard your stuff": true,
-        "lets you in": true,
-        "knows your voice": true
-      },
       "demon_cult": { "kill on sight": true, "knows your voice": true }
     },
     "epilogues": [
