@@ -15,7 +15,7 @@ The Kingdom of Humanity is a recently-birthed faction. They were formed around a
 ### Each Faction Questline (Minor Spoilers)
 Absolution: Become an agent and gain a small foothold, nothing more. A martial art and spear is everything you get. Although as expected, the martial art is pretty powerful. Absolution is aloof. It cares little for outsiders. The real treasure is within the ruler of an Absolution camp. It is a treasure not allowed to outlanders... Unless you wage war against them and plunder the bodies.
 
-Gushin Cult: Help incite a revolution against Absolution. Obtain a cool sword that turns you into an incarnation of thunder.
+Gushin Clan: Help incite a revolution against Absolution. Obtain a cool sword that turns you into an incarnation of thunder.
 
 Demon Cult: Be accepted as the Demon of the generation and gain control of a Demon Cult settlement.
 
