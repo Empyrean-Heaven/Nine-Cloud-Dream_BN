@@ -1,0 +1,45 @@
+[
+  {
+    "id": "infernalheavens",
+    "type": "TOOL",
+    "category": "weapons",
+    "weapon_category": [ "2H_SWORDS", "MEDIEVAL_SWORDS" ],
+    "name": { "str": "infernal heavens" },
+    "description": "An enormous blade doused in infernal wrath that sears your skin even when you hold it far away from you. A brilliant pillar of crimson flames lick the edge of the sword, and you feel its power coursing through your fiery veins.",
+    "looks_like": "zweifire_on",
+    "color": "dark_gray",
+    "material": [ "hardsteel" ],
+    "artifact_data": { "effects_wielded": [ "AEP_SAP_LIFE", "AEP_EVIL", "AEP_SICK" ] },
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "STRENGTH", "add": 3 },
+            { "value": "SPEED", "add": 20 },
+            { "value": "ATTACK_COST", "add": 30 },
+            { "value": "DEXTERITY", "add": 2 },
+            { "value": "ARMOR_BIO", "add": 5 },
+            { "value": "INTELLIGENCE", "add": -3 }
+          ],
+          "hit_you_effect": [ { "id": "AEA_PAIN", "hit_self": true } ],
+          "intermittent_activation": { "effects": [ { "frequency": "5 minutes", "spell_effects": [ { "id": "AEA_STAMINA_EMPTY" } ] } ] }
+        }
+      ]
+    },
+    "weight": "6 kg",
+    "volume": "6 L",
+    "price": "666 kUSD",
+    "cutting": 66,
+    "bashing": 33,
+    "to_hit": 6,
+    "symbol": ";",
+    "use_action": [ 
+     { "type": "cauterize" },
+     { "type": "enzlave" }
+    ],
+    "flags": [ "UNBREAKABLE_MELEE", "REACH_ATTACK", "FIRE", "FLAMING", "SHEATH_SWORD", "STAB", "MAGIC_FOCUS" ],
+    "techniques": [ "WBLOCK_3", "WIDE", "BRUTAL", "SWEEP", "SPIN", "IMPALE", "PRECISE" ]
+  }
+]

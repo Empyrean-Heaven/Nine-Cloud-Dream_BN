@@ -1,0 +1,29 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "demon_cult_1",
+    "name": "demon cult",
+    "sym": "d",
+    "color": "i_light_green",
+    "looks_like": "rural_house1",
+    "see_cost": 5
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "demon_cult_2",
+    "name": "demon cult",
+    "sym": "d",
+    "color": "i_light_green",
+    "looks_like": "rural_house1",
+    "see_cost": 5
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "demon_cult_roof",
+    "name": "demon cult roof",
+    "sym": "d",
+    "color": "i_light_green",
+    "looks_like": "rural_house1_roof",
+    "see_cost": 5
+  }
+]

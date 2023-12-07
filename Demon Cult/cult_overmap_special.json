@@ -1,0 +1,15 @@
+[
+  {
+    "type": "overmap_special",
+    "id": "demon cult branch",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "demon_cult_1_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "demon_cult_2_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "demon_cult_roof_north" }
+    ],
+    "locations": [ "wilderness" ],
+    "city_distance": [ 6, 36 ],
+    "occurrences": [ 0, 1 ],
+    "flags": [ "ELECTRIC_GRID" ]
+  }
+]

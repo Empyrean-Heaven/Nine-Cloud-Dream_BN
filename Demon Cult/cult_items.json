@@ -1,0 +1,18 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "skyseal",
+    "name": { "str": "skyseal" },
+    "description": "A sublime artifact of pure gold that was molded by the Infernal aura of the fabled Infernal Heavens. A concise wall of text is enscribed on one side with a detailed description of the history of the Demon Cult. On the other side is a faint image of an unknown man's visage. Beneath the countenance, the words 'They Only Feared You' is written.",
+    "price": "60 USD",
+    "price_postapoc": "6 USD",
+    "stackable": true,
+    "weight": "6 g",
+    "to_hit": -1,
+    "color": "white",
+    "looks_like": "RobofacCoin",
+    "symbol": "$",
+    "material": [ "gold" ],
+    "volume": "1 ml"
+  }
+]

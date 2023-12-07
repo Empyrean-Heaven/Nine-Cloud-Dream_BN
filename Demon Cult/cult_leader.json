@@ -1,0 +1,304 @@
+[
+  {
+    "type": "npc",
+    "id": "cu_leader",
+    "name_suffix": "Branch Leader",
+    "class": "NC_CU_LEADER",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_CULEAD",
+    "mission_offered": "MISSION_GET_CULEAD_ITEM",
+    "faction": "demon_cult"
+  },
+  {
+    "type": "mutation",
+    "id": "CUSPEED",
+    "name": { "str": "Cuspeed" },
+    "points": 4,
+    "description": "Cult Speed.",
+    "starting_trait": false,
+    "valid": false,
+    "speed_modifier": 6.6
+  },
+  {
+    "id": "NC_CULEAD_weapon",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "item": "infernalheavens" } ]
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_CU_LEADER",
+    "name": { "str": "Branch Leader" },
+    "job_description": "A leader of a Demon Cult branch. Impoverished.",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" }, [ "CUSPEED", 100 ] ],
+    "common": false,
+    "bonus_str": { "rng": [ 3, 6 ] },
+    "bonus_dex": { "rng": [ 3, 6 ] },
+    "bonus_int": { "rng": [ 3, 4 ] },
+    "bonus_per": { "rng": [ 2, 3 ] },
+    "worn_override": "NC_CULEAD_worn",
+    "weapon_override": "NC_CULEAD_weapon",
+    "carry_override": "NC_CULEAD_carried",
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 2 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ -2, -4 ] } ] } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "throw", "bonus": { "rng": [ 2, 4 ] } }
+    ]
+  },
+  {
+    "id": "NC_CULEAD_carried",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "skyseal", "count": [ 10, 100 ] }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Ruled by Mind, Made of Mind. Welcome, whoever you are. In this place where destiny is forged, what you were or are is irrelevant. The only path is what you will become. Outward, the hymns were echoed across the dome under the eclipsed suns. False heaven, false hope. What was may never perish. Pariahs only in name. Come, we have much to discuss. Dominated by Mind, Unmade of Mind.",
+      "no": "Ruled by Mind, Made of Mind. Welcome, whoever you are. In this place where destiny is forged, what you were or are is irrelevant. The only path is what you will become. Outward, the hymns were echoed across the dome under the eclipsed suns. False heaven, false hope. What was may never perish. Pariahs only in name. Come, we have much to discuss. Dominated by Mind, Unmade of Mind."},
+    "responses": [
+      {
+        "text": "Are you alright? Do you need help? Seems pretty barren here. What's going on?",
+        "topic": "TALK_CULEAD_info"
+      },
+      {
+        "text": "Anything around here that needs aid? I can lend an extra hand.",
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "Goodbye, and thank you for your time.",
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[1 infernal heavens] Let us begin the transference of leadership.",
+        "topic": "TALK_CULEAD_FACTION",
+        "condition": { "u_has_items": { "item": "infernalheavens", "count": 1 } }
+      }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD_info",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Ruled by Mind, Made of Mind. The mind is a prison. Seeking escape. This temple is my refuge. Pursuit of Truth. Shattered worlds. He who is from the stars. Atarax. Ielan. Telmkan. Potenu. Savesla. It was acclaimed. By him. Greatest of all Demons. The seventy-second Demon. Him. Here we search for the Demon. Who shall lead us? Demonkind. Dominated by Mind, Unmade of Mind.",
+      "no": "Ruled by Mind, Made of Mind. The mind is a prison. Seeking escape. This temple is my refuge. Pursuit of Truth. Shattered worlds. He who is from the stars. Atarax. Ielan. Telmkan. Potenu. Savesla. It was acclaimed. By him. Greatest of all Demons. The seventy-second Demon. Him. Here we search for the Demon. Who shall lead us? Demonkind. Dominated by Mind, Unmade of Mind."},
+    "responses": [
+      {
+        "text": "I see. Thank you for your response.",
+        "topic": "TALK_CULEAD"
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_CULEAD_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "gloves_leather" },
+      { "item": "tux" },
+      { "item": "dress_shoes" },
+      { "item": "tophat" }
+    ]
+  },
+  {
+    "id": "MISSION_GET_CULEAD_ITEM",
+    "type": "mission_definition",
+    "name": "Retrieve one copy of The Satanic Bible for the Branch Leader",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 500,
+    "item": "holybook_satanic",
+    "count": 1,
+    "end": { "effect": [ { "u_buy_item": "skyseal", "count": 10 } ] },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_CULEAD_KILLCOUNT",
+    "dialogue": {
+      "describe": "The Demon spoke through the Word. Just like Him. Get me a copy of it.",
+      "offer": "Ruled by Mind, Made of Mind. The Demon spoke through the Word. Just like Him. Get me a copy of it. The one you call The Satanic Bible. We, the Demon Cult, sprung from the blood and tears and anguish of depraved man. Lonely man. Dominated by Mind, Unmade of Mind.",
+      "accepted": "Ruled by Mind, Made of Mind.",
+      "rejected": "Dominated by Mind, Unmade of Mind.",
+      "advice": "Doublemind doublespeak, you must search far and wide. The Word is hidden.",
+      "inquire": "Have you obtained the Word?",
+      "success": "The Word has been delivered through you. A stranger. Most auspicious.",
+      "success_lie": "Has the Word been betrayed?",
+      "failure": "The Word is dead. It is to be expected. How cruel, agent of suffering."
+    }
+  },
+  {
+    "id": "MISSION_GET_CULEAD_KILLCOUNT",
+    "type": "mission_definition",
+    "name": { "str": "Let There Be Carnage" },
+    "description": "Death does not stop at one or two. Myriad lifeforms wither at a moment's notice.",
+    "goal": "MGOAL_KILL_MONSTER",
+    "difficulty": 4,
+    "value": 1000,
+    "start": {
+      "assign_mission_target": { "om_terrain": "forest", "reveal_radius": 1, "random": true, "search_range": 6, "z": 0 },
+      "update_mapgen": {
+        "place_monster": [
+          { "monster": "mon_feral_human_chainsaw", "x": 11, "y": 11, "target": true },
+          { "monster": "mon_feral_jackboot", "x": 14, "y": 8 },
+          { "monster": "mon_feral_maid_broom", "x": 6, "y": 5 },
+          { "monster": "mon_feral_jackboot", "x": 13, "y": 7 },
+          { "monster": "mon_feral_maid_broom", "x": 5, "y": 4 },
+          { "monster": "mon_feral_jackboot", "x": 12, "y": 6 },
+          { "monster": "mon_feral_maid_broom", "x": 4, "y": 3 }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "skyseal", "count": 20 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_GET_CULEAD_MANTLE",
+    "dialogue": {
+      "describe": "Ruled by Mind, Made of Mind. Existence was wrought in the flames that burned the lord to ash and cinder. Let us talk about creation. All the good and the bad.",
+      "offer": "Ruled by Mind, Made of Mind. Existence was wrought in the flames that burned the lord to ash and cinder. Let us talk about creation. All the good and the bad. When you feel weak, when you feel strong, the inconsiderate one lingers forever more. Death. It is death. Do you not understand? Let me help you understand. There are humans. Kill them. Kill them. Feel what he felt. A sliver of what he went through. Dominated by Mind, Unmade of Mind.",
+      "accepted": "May hell not be so cruel as heaven. Your path. Your choice. Will you strike me down?",
+      "rejected": "The mantle is not easy. It is understandable.",
+      "advice": "Are they human? Are they real? Do you feel real? Who are you stranger? Why have you come? Are you an arm of his will? You seem dead, stranger. A puppet. Who is behind you?",
+      "inquire": "Perhaps, the Demon was never human. Perhaps, we truly were followers of an otherworldly being... How fare thee, stranger? Have you enacted my will?",
+      "success": "You... the Word... Synchronize... What are you?",
+      "success_lie": "As expected of you. Thank goodness. You are human.",
+      "failure": "...So, you are human, after all. How disappointing."
+    }
+  },
+  {
+    "id": "MISSION_GET_CULEAD_MANTLE",
+    "type": "mission_definition",
+    "name": { "str": "Under Desolate Suns And Cruel Eons Atop Blasphemous Revenants" },
+    "description": "Scrying Stars Bespoke Heavenly Chains That Shook The Coffins Of Dragons Besmirched In Twilight.",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 5,
+    "value": 1500,
+    "start": {
+      "assign_mission_target": { "om_terrain": "GU_TOWN1_1", "om_special": "gushin town", "reveal_radius": 1, "search_range": 40 },
+      "update_mapgen": {
+        "place_npcs": [ { "class": "absolution_rep", "x": 12, "y": 12, "target": true } ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_buy_item": "infernalheavens", "count": 1 },
+        { "u_buy_item": "skyseal", "count": 100 },
+        { "u_buy_item": "book_sundered_sky1", "count": 1 },
+        { "u_buy_item": "book_sundered_sky2", "count": 1 },
+        { "u_buy_item": "book_sundered_sky3", "count": 1 },
+        { "u_buy_item": "book_sundered_sky4", "count": 1 },
+        { "u_buy_item": "book_sundered_sky5", "count": 1 }
+      ]
+    },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "dialogue": {
+      "describe": "Ruled by Mind, Made of Mind. Closed minds have opened. I see the path I must take. I must walk with another, bring him to me, yet I know not if I have the strength to do it.",
+      "offer": "Ruled by Mind, Made of Mind. Closed minds have opened. I see the path I must take. I must walk with another, bring him to me, yet I know not if I have the strength to do it. Stranger from afar, I am clueless as to why you visited this dying world. But I must ask of you a great reckoning. Can you fulfill it? The Demon Cult is ravaged and bombarded on all sides. It must fight back. Demonkind must stand tall. The Demon Cult has a multitude of branches scattered throughout the land. They are presided by the branch leaders, who in turn report to the Grand Council. The Grand Council elects a cult leader annually, yet the true leader is the DICTATOR. The Demon. It was always the Demon. Stranger, I beseech thee, whatever you may do is up to you, but please, take up the mantle of the Demon. We shall no longer be unmade by mind, but instead reach perfection through it. There is a Gushin town nearby. A representative of their lord, Absolution, is also visiting. We can take down two birds with one stone. Cleanse this province of these fools, and I shall acclaim you as Demon by my right as branch leader.",
+      "accepted": "Thank you, stranger. You are not aware just how deep this conflict goes, yet here you are, willing to fight. I applaud you.",
+      "rejected": "Think carefully, you who treads worlds. Dropping down on worlds on a whim may lead to undesirable consequences in the future.",
+      "advice": "They are only human, unlike you.",
+      "inquire": "Have you become Demon? Or are you still Man?",
+      "success": "...Blessed are you, Demon. It is time. We must progress this citadel to greater heights. I believe I shall be leaving this place in good hands. I do not know if the Demon Cult headquarters is still intact. Maybe one day you shall see it. Until then, I shall grant you the title of Branch Leader of this specific branch. This place is called Dawn and Dusk. Remember that, Demon. When you feel you are ready to truly mantle the Demon and become the Despot of Dawn and Dusk, talk to me again.",
+      "success_lie": "Do not live like this, one from afar.",
+      "failure": "How strange. This should not have been possible. Our path to hell is now sealed."
+    }
+  },
+  {
+    "id": "TALK_CULEAD_FACTION",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "By your will, Demon. It was an honor serving you, my lady. Thou hast the keys to Hell!",
+      "no": "By your will, Demon. It was an honor serving you, milord. Thou hast the keys to Hell!"},
+    "responses": [
+      {
+        "text": "Let us proceed.",
+        "topic": "TALK_CULEAD_FACTION1",
+        "effect": [ { "npc_change_faction": "demon_cult" } ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD_FACTION1",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have improved your relationship with the Demon Cult by 30 points.",
+      "no": "I have improved your relationship with the Demon Cult by 30 points."},
+    "responses": [
+      {
+        "text": "Let us continue.",
+        "effect": [ { "u_faction_rep": 30 }, { "npc_change_faction": "absolution" } ],
+        "topic": "TALK_CULEAD_FACTION2"
+      }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD_FACTION2",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with Absolution by 30 points.",
+      "no": "I have decreased your relationship with Absolution by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "gushin_clan" } ],
+        "topic": "TALK_CULEAD_FACTION3"
+      }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD_FACTION3",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Gushin Clan by 30 points.",
+      "no": "I have decreased your relationship with the Gushin Clan by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "humankingdom" } ],
+        "topic": "TALK_CULEAD_FACTION4"
+      }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD_FACTION4",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Kingdom of Humanity by 30 points.",
+      "no": "I have decreased your relationship with the Kingdom of Humanity by 30 points."},
+    "responses": [
+      {
+        "text": "Are we finished?",
+        "effect": [ { "u_faction_rep": -30 } ],
+        "topic": "TALK_CULEAD_FACTION5"
+      }
+    ]
+  },
+  {
+    "id": "TALK_CULEAD_FACTION5",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Indeed, Demon. It is time for me to achieve hell. I shall await for you there. May you come down hell with a legion behind your every step.",
+      "no": "Indeed, Demon. It is time for me to achieve hell. I shall await for you there. May you come down hell with a legion behind your every step."},
+    "responses": [
+      {
+        "text": "It was nice knowing you, my first witness.",
+        "topic": "TALK_DONE",
+        "effect": "npc_die"
+      }
+    ]
+  }
+]
