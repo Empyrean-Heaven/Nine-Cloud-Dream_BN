@@ -1,0 +1,99 @@
+[
+  {
+    "type": "npc_class",
+    "id": "NC_ABSOLUTION_REP",
+    "name": { "str": "Absolution Representative" },
+    "job_description": "A lord above common men representing the interests of Absolution.",
+    "common": false,
+    "bonus_str": { "rng": [ 4, 6 ] },
+    "bonus_dex": { "rng": [ 2, 3 ] },
+    "bonus_int": { "rng": [ 2, 3 ] },
+    "bonus_per": { "rng": [ 2, 3 ] },
+    "worn_override": "NC_AB_REP_worn",
+    "carry_override": "NC_AB_REP_carried",
+    "weapon_override": "NC_AB_REP_weapon",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" }, [ "ABSPEED", 100 ] ],
+    "bionics": [
+      { "id": "bio_armor_head", "chance": 100 },
+      { "id": "bio_armor_torso", "chance": 100 },
+      { "id": "bio_armor_arms", "chance": 100 },
+      { "id": "bio_armor_legs", "chance": 100 },
+      { "id": "bio_armor_eyes", "chance": 100 },
+      { "id": "bio_carbon", "chance": 100 },
+      { "id": "bio_power_storage_mkII", "chance": 100 },
+      { "id": "bio_power_storage_mkII", "chance": 100 },
+      { "id": "bio_advreactor", "chance": 100 },
+      { "id": "bio_nanobots", "chance": 100 },
+      { "id": "bio_hydraulics", "chance": 100 },
+      { "id": "bio_ads", "chance": 100 },
+      { "id": "bio_blade", "chance": 100 }
+    ],
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 2 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ -2, -4 ] } ] } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 3, 6 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 4, 8 ] } },
+      { "skill": "stabbing", "bonus": { "rng": [ 4, 8 ] } },
+      { "skill": "throw", "bonus": { "rng": [ 2, 4 ] } }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "ABSPEED",
+    "name": { "str": "Abspeed" },
+    "points": 6,
+    "description": "Absolute Speed.",
+    "starting_trait": false,
+    "valid": false,
+    "speed_modifier": 11.1
+  },
+  {
+    "id": "NC_AB_REP_worn",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "item": "bikini_bottom" },
+      { "item": "bikini_top" },
+      { "item": "stockings" },
+      { "item": "thigh_high_boots" },
+      { "item": "cassock" },
+      { "item": "backpack" },
+      { "item": "small_relic" }
+    ]
+  },
+  {
+    "id": "NC_AB_REP_weapon",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "item": "judgmentspear" } ]
+  },
+  {
+    "id": "NC_AB_REP_carried",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "absol", "count": [ 10, 100 ] },
+      { "item": "absolve", "count": [ 10, 100 ] },
+      { "item": "holybook_bible1" }
+    ]
+  },
+  {
+    "type": "npc",
+    "id": "absolution_rep",
+    "name_suffix": "Representative of Absolution",
+    "class": "NC_ABSOLUTION_REP",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_ABREP",
+    "faction": "absolution"
+  },
+  {
+    "id": "TALK_ABREP",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have nothing much to tell you, outlander. If you so desire conversation, go to the Absolutist or the Deliverer.",
+      "no": "I have nothing much to tell you, outlander. If you so desire conversation, go to the Absolutist or the Deliverer."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  }
+]

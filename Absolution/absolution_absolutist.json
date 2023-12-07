@@ -1,0 +1,204 @@
+[
+  {
+    "type": "npc_class",
+    "id": "NC_AB_ABSOLUTIST",
+    "name": { "str": "Absolutist" },
+    "job_description": "A lord above common men representing the interests of one of the Eleven.",
+    "common": false,
+    "bonus_str": { "rng": [ 6, 8 ] },
+    "bonus_dex": { "rng": [ 4, 6 ] },
+    "bonus_int": { "rng": [ 3, 4 ] },
+    "bonus_per": { "rng": [ 3, 4 ] },
+    "worn_override": "NC_AB_REP_worn",
+    "carry_override": "NC_AB_REP_carried",
+    "weapon_override": "NC_AB_REP_weapon",
+    "traits": [ { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" }, [ "ABSPEED", 100 ] ],
+    "bionics": [
+      { "id": "bio_armor_head", "chance": 100 },
+      { "id": "bio_armor_torso", "chance": 100 },
+      { "id": "bio_armor_arms", "chance": 100 },
+      { "id": "bio_armor_legs", "chance": 100 },
+      { "id": "bio_armor_eyes", "chance": 100 },
+      { "id": "bio_carbon", "chance": 100 },
+      { "id": "bio_power_storage_mkII", "chance": 100 },
+      { "id": "bio_power_storage_mkII", "chance": 100 },
+      { "id": "bio_advreactor", "chance": 100 },
+      { "id": "bio_nanobots", "chance": 100 },
+      { "id": "bio_hydraulics", "chance": 100 },
+      { "id": "bio_ads", "chance": 100 },
+      { "id": "bio_worldheart", "chance": 100 }
+    ],
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 2 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ -2, -4 ] } ] } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 4, 8 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 5, 10 ] } },
+      { "skill": "stabbing", "bonus": { "rng": [ 4, 8 ] } },
+      { "skill": "throw", "bonus": { "rng": [ 3, 6 ] } }
+    ]
+  },
+  {
+    "type": "npc",
+    "id": "ab_absolutist",
+    "name_suffix": "Absolutist",
+    "class": "NC_AB_ABSOLUTIST",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_AB_ABSOLUTIST",
+    "faction": "absolution"
+  },
+  {
+    "id": "TALK_AB_ABSOLUTIST",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I suppose you wish to know more about us, outlander? Here is a brief rundown. We serve the Eleven. They exist in the astral firmament and rarely descend upon the lesser realms. The Eleven are beings that transcended the mortal plane and escaped into the dimension of the endless. We are lords that serve the Eleven. A central committee exists, yet they contact the individual settlements once every fifty years. Surprised? Don't be, for by the majesty of the Eleven I have broken free of the debauch chains of longevity. I am currently one-hundred-and-twenty-nine years old. And I shall serve for a thousand more.",
+      "no": "I suppose you wish to know more about us, outlander? Here is a brief rundown. We serve the Eleven. They exist in the astral firmament and rarely descends upon the lesser realms. The Eleven are beings that transcended the mortal plane and escaped into the dimension of the endless. We are lords that serve the Eleven. A central committee exists, yet they contact the individual settlements once every fifty years. Surprised? Don't be, for by the majesty of the Eleven I have broken free of the debauch chains of longevity. I am currently one-hundred-and-twenty-nine years old. And I shall serve for a thousand more."
+    },
+    "responses": [
+      { "text": "Thank you for your time.", "topic": "TALK_DONE" },
+      {
+        "text": "[1 spear of judgment] Can we make my status in Absolution official?",
+        "topic": "TALK_AB_ABSOLUTIST_FACTION",
+        "condition": { "u_has_items": { "item": "judgmentspear", "count": 1 } },
+        "effect": { "u_consume_item": "judgmentspear", "count": 1 }
+      }
+    ]
+  },
+  {
+    "id": "TALK_AB_ABSOLUTIST_FACTION",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Certainly, my lady. Please, allow me to go through the process.",
+      "no": "Certainly, my good sir. Please, allow me to go through the process."},
+    "responses": [
+      {
+        "text": "Let us proceed.",
+        "topic": "TALK_AB_ABSOLUTIST_FACTION1",
+        "effect": [ { "npc_change_faction": "absolution" } ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_AB_ABSOLUTIST_FACTION1",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have improved your relationship with Absolution by 30 points.",
+      "no": "I have improved your relationship with Absolution by 30 points."},
+    "responses": [
+      {
+        "text": "Let us continue.",
+        "effect": [ { "u_faction_rep": 30 }, { "npc_change_faction": "demon_cult" } ],
+        "topic": "TALK_AB_ABSOLUTIST_FACTION2"
+      }
+    ]
+  },
+  {
+    "id": "TALK_AB_ABSOLUTIST_FACTION2",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Demon Cult by 30 points.",
+      "no": "I have decreased your relationship with the Demon Cult by 30 points."},
+    "responses": [
+      {
+        "text": "Let us commence forth.",
+        "effect": [ { "u_faction_rep": -30 }, { "npc_change_faction": "humankingdom" } ],
+        "topic": "TALK_AB_ABSOLUTIST_FACTION3"
+      }
+    ]
+  },
+  {
+    "id": "TALK_AB_ABSOLUTIST_FACTION3",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "I have decreased your relationship with the Kingdom of Humanity by 30 points.",
+      "no": "I have decreased your relationship with the Kingdom of Humanity by 30 points."},
+    "responses": [
+      {
+        "text": "Are we finished?",
+        "effect": [ { "u_faction_rep": -30 } ],
+        "topic": "TALK_AB_ABSOLUTIST_FACTION4"
+      }
+    ]
+  },
+  {
+    "id": "TALK_AB_ABSOLUTIST_FACTION4",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Absolutely. Thank you for your patience.",
+      "no": "Absolutely. Thank you for your patience."},
+    "responses": [
+      {
+        "text": "Great! Thank you for your service.",
+        "topic": "TALK_DONE",
+        "effect": [ { "u_buy_item": "judgmentspear", "count": 1 } ]
+      }
+    ]
+  },
+  {
+    "id": "bio_worldheart",
+    "type": "bionic",
+    "name": { "str": "Worldheart" },
+    "description": "A manifest boon gifted to the devoted and talented servants of Absolution. It is thought to be a sliver of infinity, granting the user an endless wellspring of vitality.",
+    "occupied_bodyparts": [ [ "torso", 3 ] ],
+    "enchantments": [ "ENCH_WORLDHEART" ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_WORLDHEART",
+    "condition": "ALWAYS",
+    "mutations": [ "WORLDHEART_MUT" ],
+    "intermittent_activation": { "effects": [ { "frequency": "48 hours", "spell_effects": [ { "id": "worldheart_healing" } ] } ] },
+    "ench_effects": [ { "effect": "WORLDHEART_EFFECT", "intensity": 1 } ]
+  },
+  {
+    "type": "effect_type",
+    "id": "WORLDHEART_EFFECT",
+    "name": [ "Worldheart" ],
+    "desc": [
+      "You feel as if your heart is the heart of the world. When you focus, you can attune yourself to the all-pervading melodious drumbeat of the world."
+    ],
+    "rating": "good",
+    "max_intensity": 1,
+    "base_mods": { "healing_rate": [ 100 ], "healing_head": [ 100 ], "healing_torso": [ 100 ] }
+  },
+  {
+    "id": "worldheart_healing",
+    "type": "SPELL",
+    "name": "Worldheart Bloodline",
+    "description": "Resurrection itself.",
+    "valid_targets": [ "self" ],
+    "min_damage": -111,
+    "max_damage": -111,
+    "effect": "target_attack"
+  },
+  {
+    "id": "bio_worldheart",
+    "copy-from": "bionic_general_npc_usable",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Worldheart CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "An unusual shape of a silver-like viscous liquid. It seems to hum as you hold it in your hands.",
+    "price": "11111 USD",
+    "price_postapoc": "111 USD",
+    "weight": "111 g",
+    "difficulty": 11
+  },
+  {
+    "type": "mutation",
+    "id": "WORLDHEART_MUT",
+    "name": { "str": "Worldheart" },
+    "points": 11,
+    "description": "You cannot die, for this heart, is the heart of the world.",
+    "valid": false,
+    "types": [ "HEALING" ],
+    "healing_awake": 11.0,
+    "healing_resting": 11.0,
+    "mending_modifier": 11.0
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "type": "npc",
+    "id": "ab_woman",
+    "name_suffix": "Femundus",
+    "class": "ab_camp_womnpc",
+    "gender": "female",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_ABWOMAN",
+    "faction": "absolution"
+  },
+  {
+    "type": "npc",
+    "id": "ab_man",
+    "name_suffix": "Memundus",
+    "class": "ab_camp_manpc",
+    "gender": "male",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_ABMAN",
+    "faction": "absolution"
+  },
+  {
+    "type": "npc_class",
+    "id": "ab_camp_womnpc",
+    "name": { "str": "Femundus" },
+    "job_description": "A woman who lives in a local Absolution camp who takes care of the mundane essentials necessary to keep a camp running.",
+    "traits": [ { "group": "Appearance_demographics" } ],
+    "common": false,
+    "worn_override": "NC_ABWOM_worn",
+    "carry_override": "NC_ABWOM_carry",
+    "weapon_override": "NC_ABWOM_weapon",
+    "skills": [
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -3 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 1, 2 ] } }
+    ]
+  },
+  {
+    "type": "npc_class",
+    "id": "ab_camp_manpc",
+    "name": { "str": "Memundus" },
+    "job_description": "A man who lives in a local Absolution camp who takes care of the mundane essentials necessary to keep a camp running.",
+    "traits": [ { "group": "Appearance_demographics" } ],
+    "common": false,
+    "worn_override": "NC_ABMAN_worn",
+    "carry_override": "NC_ABMAN_carry",
+    "weapon_override": "NC_ABMAN_weapon",
+    "skills": [
+      { "skill": "ALL", "level": { "sum": [ { "dice": [ 3, 2 ] }, { "constant": -3 } ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "unarmed", "bonus": { "rng": [ 1, 2 ] } }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABWOM_worn",
+    "subtype": "collection",
+    "entries": [ { "item": "maid_dress" }, { "item": "bra" }, { "item": "panties" }, { "item": "dress_shoes" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABWOM_carry",
+    "subtype": "collection",
+    "entries": [ { "item": "pocketwatch", "prob": 40 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABWOM_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABMAN_weapon",
+    "subtype": "distribution",
+    "items": [ [ "null", 50 ], [ "knife_folding", 30 ], [ "knife_hunting", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABMAN_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "gloves_leather", "prob": 80 },
+      { "item": "boxer_shorts" },
+      { "item": "breeches" },
+      { "item": "dress_shirt" },
+      { "item": "dress_shoes" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_ABMAN_carry",
+    "subtype": "collection",
+    "entries": [ { "item": "pocketwatch", "prob": 40 } ]
+  },
+  {
+    "id": "TALK_ABMAN",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Welcome, lovely damsel, to one of Absolution's finest establishments. If I dare say so myself, you are quite stunning and I would love to get acquainted! However, please be mindful of where you tread in these parts. The enforcers of Absolution's will are wary of outsiders. A war is going on between Absolution and its many enemies, after all.",
+      "no": "Salutations my good sir, how goes thee? If I may be blunt, please refrain from making yourself at home here, for Absolution doesn't take too kindly to strangers. The folks in charge are hardly becoming to outlanders and you happen to be one. Mingle mostly with us mundane people, and you'll be fine."
+    },
+    "responses": [
+      {
+        "text": "May I ask how this settlement is operated? As a stranger, it all seems vague and behind closed doors.",
+        "topic": "TALK_ABMAN_INFO"
+      },
+      { "text": "Farewell, and stay safe.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "TALK_ABMAN_INFO",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Hmm? I wouldn't go poking around if I were you miss. The hierarchy of Absolution is stiff to the core. It has strict princples and even stricter guardians of this order of things. I suppose a basic rundown won't hurt. I was born and bred all my life here, as my father and grandfather before me did. According to the Local Book of Lineages, our bloodline arrived in this town seven generations ago. How and why, I do not know. All in good time, I am sure.",
+      "no": "Now, I know this may appear inappropriate, but you truly shouldn't ask too much about this place. The hierarchy of Absolution is stiff to the core. It has strict princples and even stricter guardians of this order of things. I suppose a basic rundown won't hurt. I was born and bred all my life here, as my father and grandfather before me did. According to the Local Book of Lineages, our bloodline arrived in this town seven generations ago. How and why, I do not know. All in good time, I am sure."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "id": "TALK_ABWOMAN",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "Why hello, dear madam! How is the outside world? Oh, I heard so many things about it! Huh? Why yes, I have never left this town my whole life! Neither did my mother or grandmother! And I am certain their mothers and grandmothers never left either! (Chuckles) Pardon me, but I just can't help myself! It has been ages since we had a visitor. I, wonder why... Oh well, I'm sure everyone is doing great! I would love to sit down with you and have some tea and biscuits, but at the moment, every moment in fact, we are quite busy.",
+      "no": "Good to see you sir! It has been a long time since we last had an outsider drop by our modest town. I hope everything is alright in the outside world? Oh, I wouldn't know. I have never left this home of mine. Things have been the same here ever since I can remember. It is quiant don't you think? Perhaps you should settle down some time."
+    },
+    "responses": [
+      {
+        "text": "May I ask how this settlement is operated? As a stranger, it all seems vague and behind closed doors.",
+        "topic": "TALK_ABWOMAN_INFO"
+      },
+      { "text": "Farewell, and stay safe.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "TALK_ABWOMAN_INFO",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "u_female": true,
+      "yes": "The operations of the town? Well, it is lorded by an Absolutist who is a direct emissary of one of the Eleven. The Eleven are, well, I can't really tell you because I am not so sure myself. They seem like good people as it is said they maintain the peace in these parts. Although we are at war, we never felt its effects. Besides the Absolutist are the Representatives who act as guardians of the town. Try not to get on their bad side.",
+      "no": "The operations of the town? Well, it is lorded by an Absolutist who is a direct emissary of one of the Eleven. The Eleven are, well, I can't really tell you because I am not so sure myself. They seem like good people as it is said they maintain the peace in these parts. Although we are at war, we never felt its effects. Besides the Absolutist are the Representatives who act as guardians of the town. Try not to get on their bad side."
+    },
+    "responses": [ { "text": "Thank you for your time.", "topic": "TALK_DONE" } ]
+  }
+]

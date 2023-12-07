@@ -1,0 +1,20 @@
+[
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "abrep_spawn",
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "absolution_rep", "x": 0, "y": 0 } ] }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "abwom_spawn",
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "ab_woman", "x": 0, "y": 0 } ] }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "abman_spawn",
+    "object": { "mapgensize": [ 1, 1 ], "place_npcs": [ { "class": "ab_man", "x": 0, "y": 0 } ] }
+  }
+]

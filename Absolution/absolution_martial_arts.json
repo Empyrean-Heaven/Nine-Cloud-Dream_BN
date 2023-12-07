@@ -1,0 +1,55 @@
+[
+  {
+    "type": "martial_art",
+    "id": "style_judgmentwing",
+    "name": "Wings of Judgment",
+    "description": "A martial art developed jointly by the Eleven of Absolution. It relies on speed and nothing but speed.",
+    "initiate": [ "You attach your mind to the clouds and feel yourself getting lightheaded.", "%s pauses briefly, and then moves with unnatural speed!" ],
+    "arm_block": 99,
+    "leg_block": 99,
+    "learn_difficulty": 11,
+    "primary_skill": "stabbing",
+    "strictly_melee": true,
+    "onmove_buffs": [
+      {
+        "id": "ab_speed_boost",
+        "name": "Cloudburst",
+        "description": "As you run, you get the feeling you are treading on clouds.",
+        "melee_allowed": true,
+        "skill_requirements": [ { "name": "melee", "level": 6 } ],
+        "buff_duration": 2,
+        "max_stacks": 11,
+        "flat_bonuses": [ { "stat": "speed", "scale": 10.0 } ]
+      },
+      {
+        "id": "ab_dodge_boost",
+        "name": "Vapormist",
+        "description": "What use is it to strike at clouds and flail your swords at the morning fog?",
+        "melee_allowed": true,
+        "skill_requirements": [ { "name": "melee", "level": 6 } ],
+        "buff_duration": 2,
+        "max_stacks": 11,
+        "flat_bonuses": [ { "stat": "dodge", "scale": 1.1 } ]
+      }
+    ],
+    "weapons": [
+      "judgmentspear"
+    ],
+    "techniques": [ "tec_ab_wallcounter" ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_ab_wallcounter",
+    "name": "Swirling Smoke",
+    "messages": [ "Your presence becomes ethereal as you vanish and reappear in a moment's notice behind %s before delivering a deadly blow", "<npcname> pushes off a nearby wall and strikes down at %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": true,
+    "crit_ok": true,
+    "wall_adjacent": true,
+    "side_switch": true,
+    "weighting": 2,
+    "knockback_dist": 1,
+    "knockback_spread": 1,
+    "mult_bonuses": [ { "stat": "movecost", "scale": 10.0 }, { "stat": "damage", "type": "stab", "scale": 1.1 } ]
+  }
+]

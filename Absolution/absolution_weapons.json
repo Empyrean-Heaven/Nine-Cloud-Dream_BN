@@ -1,0 +1,54 @@
+[
+  {
+    "id": "judgmentspear",
+    "type": "TOOL",
+    "copy-from": "spear_steel",
+    "weapon_category": [ "SPEARS" ],
+    "category": "weapons",
+    "name": { "str": "spear of judgment", "str_pl": "spears of judgment" },
+    "description": "An ordinary steel spear engraved with vaguely luminous symbols that etch across its entire surface. Wielding it makes you feel lightheaded and airy, almost as if you are soaring atop swift gales flying through the clear skies.",
+    "price": "1111 USD",
+    "price_postapoc": "1111 USD",
+    "material": [ "steel", "wood" ],
+    "max_charges": 11,
+    "charges_per_use": 1,
+    "ammo": "absolve_type",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "values": [ { "value": "MOVE_COST", "add": -10 } ],
+          "hit_you_effect": [
+            {
+              "id": "AEA_FLASH",
+              "once_in": 11,
+              "message": "With a mighty crack a brilliant light emanates from the tip of the spear!",
+              "npc_message": "With a mighty crack a brilliant light emanates from the tip of %1$s's spear!"
+            }
+          ]
+        }
+      ]
+    },
+    "use_action": [ { "type": "cast_spell", "spell_id": "judgmentday", "no_fail": true, "need_wielding": true, "level": 0 } ],
+    "extend": { "flags": [ "NO_SALVAGE", "MAGIC_FOCUS" ] }
+  },
+  {
+    "id": "judgmentday",
+    "type": "SPELL",
+    "name": { "str": "Judgment Day" },
+    "description": "Judgment has arrived.",
+    "sprite": "fd_dazzling",
+    "message": "Out of the light of the spear, a pool of darkness escapes the brightness and coalesces into the form of a blurry man!",
+    "valid_targets": [ "ground" ],
+    "flags": [ "RANDOM_DAMAGE", "SILENT", "NO_HANDS", "NO_LEGS" ],
+    "effect": "summon",
+    "effect_str": "mon_darkman",
+    "min_damage": 1,
+    "max_damage": 3,
+    "min_aoe": 3,
+    "max_aoe": 3,
+    "min_duration": 10000,
+    "max_duration": 10000
+  }
+]

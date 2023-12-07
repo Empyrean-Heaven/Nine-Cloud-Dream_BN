@@ -1,0 +1,66 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "absol",
+    "name": { "str": "absol" },
+    "description": "A small, circular piece of pure gold that has been gilded with the initials A and B. The cursive letters give the item an air of nobility, although strangely enough it seems that B must've been added on later as the design and form of the two letters are distinct from one another. While A appears grand and almighty, B feels like a poor imitation of it. Besides this, nothing much of any particular note stands out from this innocent piece of yellow metal.",
+    "price": "111 USD",
+    "price_postapoc": "11 USD",
+    "stackable": true,
+    "weight": "11 g",
+    "to_hit": -1,
+    "color": "white",
+    "looks_like": "RobofacCoin",
+    "symbol": "$",
+    "material": [ "gold" ],
+    "volume": "1 ml"
+  },
+  {
+    "id": "absolve_type",
+    "name": "absolve",
+    "default": "absolve",
+    "type": "ammunition_type"
+  },
+  {
+    "id": "absolve",
+    "type": "AMMO",
+    "name": { "str": "absolve", "str_pl": "absolve" },
+    "description": "It is a semi-tangible cube that seems to be melting like a block of dry ice. Although it is small in size, for some reason it is awfully heavy.",
+    "volume": "1 ml",
+    "weight": "11 g",
+    "price": "11 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "absolvemat" ],
+    "symbol": "=",
+    "color": "blue",
+    "count": 1,
+    "ammo_type": "absolve_type",
+    "effects": [ "NEVER_MISFIRES", "NON-FOULING" ],
+    "fuel": { "energy": 10 }
+  },
+  {
+    "type": "material",
+    "id": "absolvemat",
+    "name": "Absolve",
+    "density": 1,
+    "bash_resist": 20,
+    "cut_resist": 20,
+    "bullet_resist": 20,
+    "acid_resist": 99,
+    "fire_resist": 99,
+    "elec_resist": 99,
+    "chip_resist": 99,
+    "dmg_adj": [ "lightly damaged", "damaged", "very damaged", "thoroughly damaged" ],
+    "bash_dmg_verb": "damaged",
+    "cut_dmg_verb": "damaged"
+  },
+  {
+    "id": "judgmentwing",
+    "copy-from": "book_martial",
+    "looks_like": "manual_karate",
+    "type": "GENERIC",
+    "name": { "str_sp": "Wings of Judgment" },
+    "description": "A collection of hymns, images, and forms concerning the eponymous martial art used by the legion of Absolution.",
+    "book_data": { "martial_art": "style_judgmentwing" }
+  }
+]
