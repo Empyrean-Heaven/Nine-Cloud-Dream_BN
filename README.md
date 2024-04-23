@@ -1,5 +1,5 @@
 # Nine-Cloud-Dream_BN
-An expansive mod for Cataclysm: Bright Nights. NOTE: It is highly recommended to play together with my other mod, "Phantasmagoria" for a system of magic that makes use of this mod's bountiful lore.
+An expansive mod for Cataclysm: Bright Nights. NOTE: It is highly recommended to play together with my other mod "Phantasmagoria" for a system of magic that makes use of this mod's bountiful lore.
 ### Mod Description
 A world of immortal cultivation and the pursuit of truth has arrived due to the advent of the Cataclysm. In this frozen tundra of perfection stagnant and destiny pilfered, can anyone achieve the legendary dream of transcendence?
 ### Introduction
