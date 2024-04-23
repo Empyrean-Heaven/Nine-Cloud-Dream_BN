@@ -13,7 +13,7 @@ The Demon Cult has a troubled past, and their forces, which were already dispers
 
 The Kingdom of Humanity is a recently-birthed faction. They were formed around a few years prior to the Cataclysm. They are composed of people from various martial factions who were tossed aside because of martial ineptitude. They hold a belief that being able to punch and kick a little harder shouldn't warrant a superior status to another who punches and kicks slightly less fast. Simply put, they are those who have grown tired and weary of the fabled martial world. Absolution never delivered on their promises of heavenhood, and it all seems like just another power struggle throughout the ages.
 ### Each Faction Questline (Minor Spoilers)
-Absolution: Become an agent and gain a small foothold, nothing more. A martial art and spear is everything you get. Although as expected, the martial art is pretty powerful. Absolution is aloof. It cares little for outsiders. The real treasure is within the ruler of an Absolution camp. It is a treasure not allowed to outlanders... Unless you wage war against them and plunder the bodies.
+Absolution: Become an agent and gain a small foothold, nothing more. A martial art and spear is everything you get. Although as expected, the martial art is pretty powerful. Absolution is aloof. It cares little for outsiders. The real treasure is within the ruler of an Absolution camp. It is a treasure not allowed to outlanders... Unless you wage war against them and plunder (dissect) the bodies.
 
 Gushin Clan: Help incite a revolution against Absolution. Obtain a cool sword that turns you into an incarnation of thunder.
 
